@@ -1,0 +1,218 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ADMMasterPage.master.cs" Inherits="CO_COMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <title>PM-Kisan | Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/base-responsive.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <link rel="stylesheet" href="../css/slicknav.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/entryform.css" />
+  
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        .b-leftmenu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .b-leftmenu ul li {
+                /* Sub Menu */
+            }
+
+                .b-leftmenu ul li a {
+                    display: block;
+                    background: #ebebeb;
+                    padding: 10px 15px;
+                    color: #333;
+                    text-decoration: none;
+                    -webkit-transition: 0.2s linear;
+                    -moz-transition: 0.2s linear;
+                    -ms-transition: 0.2s linear;
+                    -o-transition: 0.2s linear;
+                    transition: 0.2s linear;
+                }
+
+                    .b-leftmenu ul li a:hover {
+                        background: #f8f8f8;
+                        color: #515151;
+                    }
+
+                    .b-leftmenu ul li a .fa {
+                        width: 16px;
+                        text-align: center;
+                        margin-right: 5px;
+                        float: right;
+                    }
+
+            .b-leftmenu ul ul {
+                background-color: #ebebeb;
+            }
+
+        .b-leftmenu .sub-menu ul li a {
+            background: #f8f8f8;
+            border-left: 4px solid transparent;
+            padding: 10px 25px;
+        }
+
+        .b-leftmenu .sub-sub-menu ul li a {
+            padding: 10px 20px 10px 40px;
+        }
+
+        .b-leftmenu a.b-newpage:hover {
+            background: #ebebeb;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+
+     <script language="javascript" type="text/javascript">
+         //function to disable browser back button
+         function DisableBackButton() {
+             window.history.forward();
+         }
+         setTimeout("DisableBackButton()", 0);
+         window.onunload = function () { null };
+     </script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+          <div class="d-flex" id="wrapper">
+
+           
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+
+                
+             
+                <!-- /#page-content-wrapper -->
+
+
+
+                <div class="container-fluid">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                </asp:ContentPlaceHolder>
+                    </div>
+            </div>
+
+        </div>
+        <%--     <div class="row my-5 mx-sm-5">
+        	<div class="col-md-6">
+        		<h4 class="text-center">Send to Delhi Data Graph</h4>
+        		<canvas id="basicLineChart2" width="400" height="400"></canvas>
+        	</div>
+        	<div class="col-md-6">
+        		<h4 class="text-center">Payment (in percent)</h4>
+        		<canvas id="doughnutChart2" width="400" height="400"></canvas>
+        	</div>
+        </div>
+        --%>
+
+        <!-- /#page-content-wrapper -->
+
+
+        <!-- /#wrapper -->
+
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../js/jquery.slicknav.min.js"></script>
+        <script src="../js/dashboard.js"></script>
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+                $('#backtotop').click(function () {
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+            });
+        </script>
+
+
+        <script>
+            $('.sub-menu ul').hide();
+            $('.sub-sub-menu ul').hide();
+            $(".sub-menu a").click(function () {
+                $(this).parent(".sub-menu").children("ul").slideToggle("100");
+                $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+            });
+
+            $(".sub-sub-menu a").click(function () {
+                $(this).parent(".sub-sub-menu").children("ul").slideToggle("100");
+                $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+            });
+        </script>
+
+
+
+      
+
+
+        <script src="../vendor/jquery-ui/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#sortable-menu").sortable();
+                $("#sortable-menu").disableSelection();
+
+                $("#sortable-cards").sortable();
+                $("#sortable-cards").disableSelection();
+            });
+        </script>
+
+
+        <script>
+            $(function () {
+                $("#one-item-row").on("click", function () {
+                    $(".b-customize").addClass("col-lg-12", 300);
+                    $(".b-customize").removeClass("col-lg-4", 300);
+                    $(".b-customize").removeClass("col-lg-6", 300);
+
+                });
+
+                $("#two-item-row").on("click", function () {
+                    $(".b-customize").addClass("col-lg-6", 300);
+                    $(".b-customize").removeClass("col-lg-4", 300);
+                    $(".b-customize").removeClass("col-lg-12", 300);
+
+                });
+
+                $("#three-item-row").on("click", function () {
+                    $(".b-customize").addClass("col-lg-4", 300);
+                    $(".b-customize").removeClass("col-lg-6", 300);
+                    $(".b-customize").removeClass("col-lg-12", 300);
+
+                });
+
+            });
+        </script>
+    </form>
+</body>
+</html>

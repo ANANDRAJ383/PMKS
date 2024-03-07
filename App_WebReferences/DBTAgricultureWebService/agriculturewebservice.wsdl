@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dbtagriculture.bihar.gov.in/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://dbtagriculture.bihar.gov.in/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://dbtagriculture.bihar.gov.in/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgriFarmerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrationId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgriFarmerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgriFarmerDetailsResult" type="tns:ArrayOfDBTFarmerRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDBTFarmerRegistration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DBTFarmerRegistration" nillable="true" type="tns:DBTFarmerRegistration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DBTFarmerRegistration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Exist" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Registration_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FarmerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_Husband_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CastCateogary" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AadhaarNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlockCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlockName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PanchayatCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PanchayatName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VillageCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VillageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictCode_LG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlockCode_LG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VillageCode_LG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IFSCCODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Farmertype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PanchayatCode_LG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FarmerCat" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DBTAgriFarmerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Distcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DBTAgriFarmerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DBTAgriFarmerDetailsResult" type="tns:ArrayOfDBTFarmerRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotalApply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="regid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotalApplyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TotalApplyResult" type="tns:ArrayOfNoofApply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNoofApply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NoofApply" nillable="true" type="tns:NoofApply" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NoofApply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CropName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="aa" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSMSDept">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSDeptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSDeptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfDBTFarmerRegistration" nillable="true" type="tns:ArrayOfDBTFarmerRegistration" />
+      <s:element name="ArrayOfNoofApply" nillable="true" type="tns:ArrayOfNoofApply" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgriFarmerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgriFarmerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAgriFarmerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgriFarmerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DBTAgriFarmerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DBTAgriFarmerDetails" />
+  </wsdl:message>
+  <wsdl:message name="DBTAgriFarmerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DBTAgriFarmerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TotalApplySoapIn">
+    <wsdl:part name="parameters" element="tns:TotalApply" />
+  </wsdl:message>
+  <wsdl:message name="TotalApplySoapOut">
+    <wsdl:part name="parameters" element="tns:TotalApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSDeptSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSDept" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSDeptSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgriFarmerDetailsHttpGetIn">
+    <wsdl:part name="RegistrationId" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgriFarmerDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDBTFarmerRegistration" />
+  </wsdl:message>
+  <wsdl:message name="DBTAgriFarmerDetailsHttpGetIn">
+    <wsdl:part name="Distcode" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DBTAgriFarmerDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDBTFarmerRegistration" />
+  </wsdl:message>
+  <wsdl:message name="TotalApplyHttpGetIn">
+    <wsdl:part name="regid" type="s:string" />
+    <wsdl:part name="Uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TotalApplyHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfNoofApply" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSDeptHttpGetIn">
+    <wsdl:part name="RegId" type="s:string" />
+    <wsdl:part name="Uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="smsContent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSDeptHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpGetIn">
+    <wsdl:part name="RegId" type="s:string" />
+    <wsdl:part name="Uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="smsContent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgriFarmerDetailsHttpPostIn">
+    <wsdl:part name="RegistrationId" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgriFarmerDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDBTFarmerRegistration" />
+  </wsdl:message>
+  <wsdl:message name="DBTAgriFarmerDetailsHttpPostIn">
+    <wsdl:part name="Distcode" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DBTAgriFarmerDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDBTFarmerRegistration" />
+  </wsdl:message>
+  <wsdl:message name="TotalApplyHttpPostIn">
+    <wsdl:part name="regid" type="s:string" />
+    <wsdl:part name="Uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TotalApplyHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfNoofApply" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSDeptHttpPostIn">
+    <wsdl:part name="RegId" type="s:string" />
+    <wsdl:part name="Uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="smsContent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSDeptHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpPostIn">
+    <wsdl:part name="RegId" type="s:string" />
+    <wsdl:part name="Uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="smsContent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="AgricultureWebserviceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgriFarmerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registration Details</wsdl:documentation>
+      <wsdl:input message="tns:GetAgriFarmerDetailsSoapIn" />
+      <wsdl:output message="tns:GetAgriFarmerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DBTAgriFarmerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registration Details</wsdl:documentation>
+      <wsdl:input message="tns:DBTAgriFarmerDetailsSoapIn" />
+      <wsdl:output message="tns:DBTAgriFarmerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalApply">
+      <wsdl:input message="tns:TotalApplySoapIn" />
+      <wsdl:output message="tns:TotalApplySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSDept">
+      <wsdl:input message="tns:SendSMSDeptSoapIn" />
+      <wsdl:output message="tns:SendSMSDeptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AgricultureWebserviceHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgriFarmerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registration Details</wsdl:documentation>
+      <wsdl:input message="tns:GetAgriFarmerDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetAgriFarmerDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DBTAgriFarmerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registration Details</wsdl:documentation>
+      <wsdl:input message="tns:DBTAgriFarmerDetailsHttpGetIn" />
+      <wsdl:output message="tns:DBTAgriFarmerDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalApply">
+      <wsdl:input message="tns:TotalApplyHttpGetIn" />
+      <wsdl:output message="tns:TotalApplyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSDept">
+      <wsdl:input message="tns:SendSMSDeptHttpGetIn" />
+      <wsdl:output message="tns:SendSMSDeptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input message="tns:SendSMSHttpGetIn" />
+      <wsdl:output message="tns:SendSMSHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AgricultureWebserviceHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgriFarmerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registration Details</wsdl:documentation>
+      <wsdl:input message="tns:GetAgriFarmerDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetAgriFarmerDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DBTAgriFarmerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registration Details</wsdl:documentation>
+      <wsdl:input message="tns:DBTAgriFarmerDetailsHttpPostIn" />
+      <wsdl:output message="tns:DBTAgriFarmerDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalApply">
+      <wsdl:input message="tns:TotalApplyHttpPostIn" />
+      <wsdl:output message="tns:TotalApplyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSDept">
+      <wsdl:input message="tns:SendSMSDeptHttpPostIn" />
+      <wsdl:output message="tns:SendSMSDeptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input message="tns:SendSMSHttpPostIn" />
+      <wsdl:output message="tns:SendSMSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgricultureWebserviceSoap" type="tns:AgricultureWebserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://dbtagriculture.bihar.gov.in/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgriFarmerDetails">
+      <soap:operation soapAction="http://dbtagriculture.bihar.gov.in/GetAgriFarmerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DBTAgriFarmerDetails">
+      <soap:operation soapAction="http://dbtagriculture.bihar.gov.in/DBTAgriFarmerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalApply">
+      <soap:operation soapAction="http://dbtagriculture.bihar.gov.in/TotalApply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSDept">
+      <soap:operation soapAction="http://dbtagriculture.bihar.gov.in/SendSMSDept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://dbtagriculture.bihar.gov.in/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgricultureWebserviceSoap12" type="tns:AgricultureWebserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://dbtagriculture.bihar.gov.in/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgriFarmerDetails">
+      <soap12:operation soapAction="http://dbtagriculture.bihar.gov.in/GetAgriFarmerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DBTAgriFarmerDetails">
+      <soap12:operation soapAction="http://dbtagriculture.bihar.gov.in/DBTAgriFarmerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalApply">
+      <soap12:operation soapAction="http://dbtagriculture.bihar.gov.in/TotalApply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSDept">
+      <soap12:operation soapAction="http://dbtagriculture.bihar.gov.in/SendSMSDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://dbtagriculture.bihar.gov.in/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgricultureWebserviceHttpGet" type="tns:AgricultureWebserviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgriFarmerDetails">
+      <http:operation location="/GetAgriFarmerDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DBTAgriFarmerDetails">
+      <http:operation location="/DBTAgriFarmerDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalApply">
+      <http:operation location="/TotalApply" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSDept">
+      <http:operation location="/SendSMSDept" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <http:operation location="/SendSMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgricultureWebserviceHttpPost" type="tns:AgricultureWebserviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgriFarmerDetails">
+      <http:operation location="/GetAgriFarmerDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DBTAgriFarmerDetails">
+      <http:operation location="/DBTAgriFarmerDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalApply">
+      <http:operation location="/TotalApply" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSDept">
+      <http:operation location="/SendSMSDept" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <http:operation location="/SendSMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgricultureWebservice">
+    <wsdl:port name="AgricultureWebserviceSoap" binding="tns:AgricultureWebserviceSoap">
+      <soap:address location="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgricultureWebserviceSoap12" binding="tns:AgricultureWebserviceSoap12">
+      <soap12:address location="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgricultureWebserviceHttpGet" binding="tns:AgricultureWebserviceHttpGet">
+      <http:address location="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgricultureWebserviceHttpPost" binding="tns:AgricultureWebserviceHttpPost">
+      <http:address location="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

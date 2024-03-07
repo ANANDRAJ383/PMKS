@@ -1,0 +1,13 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMasterNew.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
+    <div>
+        <asp:Button ID="Button1" runat="server" Text="OTP" OnClick="Button1_Click"  /> <asp:Label ID="lbl1" runat="server" Text="" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="Button2" runat="server" Text="SMS" OnClick="Button2_Click" />
+    </div>
+</asp:Content>
+

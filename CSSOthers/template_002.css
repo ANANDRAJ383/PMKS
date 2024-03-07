@@ -1,0 +1,120 @@
+/*
+ * ------------------------------------------------------------------------
+ * JA Purity II template for Joomla 2.5
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+*/
+
+/* COMMON STYLE
+--------------------------------------------------------- */
+/* Normal links ---*/
+
+
+
+/* Rounded Module --- */
+div.ja-module h3, div.module h3 {
+  border-bottom: 1px solid #ccc;
+  color: #7ba566;
+  font-size: 115%;
+  font-weight: bold;
+  margin: 0 -15px 10px;
+  padding: 8px 15px;
+  text-transform: uppercase;
+}
+
+div.ja-module, div.module {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* MODULE STYLES
+--------------------------------------------------------- */
+div.ja-moduletable h3, div.moduletable h3 {
+  background: url(../images/dot2.gif) repeat-x bottom;
+  color: #333;
+  font-size: 115%;
+  margin: 0 0 8px;
+  padding: 1px 0 8px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+div.ja-moduletable ul li, div.ja-module ul li { padding-left: 12px; background-position: 2px 8px; }
+
+/* Module list ---*/
+div.ja-moduletable ul, div.ja-module ul { margin: 15px 0 0; }
+
+div.ja-moduletable, div.moduletable {
+  border-bottom: 1px solid #ccc;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  padding: 0 0 20px;
+  position: relative;
+}
+
+/* Logo Text ---*/
+div.logo-text { margin-top: 8px; }
+
+div.logo-text h1 a {
+  color: #ccc;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+div.module_black .inputbox, div.module_green .inputbox, div.module_blue .inputbox, div.module_red .inputbox { color: #333 !important; }
+
+/* text color for high contrast module */
+div.module_black, div.module_green, div.module_blue, div.module_red { color: #fff; }
+
+/* blue */
+div.module_blue {
+  background: url(../images/news.jpg) no-repeat bottom right #069;
+  border-radius:8px;
+}
+
+div.module_blue .ja-box-bl {
+  background: url(../images/bb-bl.gif) no-repeat bottom left;
+}
+
+div.module_blue .ja-box-tl {
+  background: url(../images/bb-tl.gif) no-repeat top left;
+}
+
+div.module_blue .ja-box-tr {
+  background: url(../images/bb-tr.gif) no-repeat top right;
+}
+
+div.module_blue a { color: #7BA566; }
+
+/* green */
+div.module_green {
+  background: url(../images/bg-br.gif) no-repeat bottom right #7ba566;
+}
+
+div.module_green .ja-box-bl {
+  background: url(../images/bg-bl.gif) no-repeat bottom left;
+}
+
+div.module_green .ja-box-tl {
+  background: url(../images/bg-tl.gif) no-repeat top left;
+}
+
+div.module_green .ja-box-tr {
+  background: url(../images/bg-tr.gif) no-repeat top right;
+}
+
+div.module_green div.bannergroup_text div.bannerheader,
+div.module_green div.bannergroup_text div.bannerfooter_text a { color: #ccc; }
+
+/* Blank */
+div.module_noborder,
+div.module_noborder .ja-box-bl,
+div.module_noborder .ja-box-tr,
+div.module_noborder .ja-box-tl { background: none; padding: 0; }
+

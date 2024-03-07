@@ -1,0 +1,207 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ADMMasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PMKY</title>
+        <!-- Load Favicon-->
+        <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Load Material Icons from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+        <!-- Load Simple DataTables Stylesheet-->
+        <link href="../cdn.jsdelivr.net/npm/simple-datatables%407.1.2/dist/style.min.css" rel="stylesheet" />
+        <!-- Roboto and Roboto Mono fonts from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet" />
+        <!-- Load main stylesheet-->
+        <link href="../new_css/stylesLogin.css" rel="stylesheet" />
+  
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="nav-fixed bg-light">
+    <form id="form1" runat="server">
+  <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <!-- Top app bar navigation menu-->
+    <nav class="top-app-bar navbar navbar-expand navbar-dark bg-dark">
+        <div class="container-fluid px-4">
+            <!-- Drawer toggle button-->
+            <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i class="material-icons">menu</i></button>
+            <!-- Navbar brand-->
+            <a class="navbar-brand me-auto" href="index.html"><div class="text-uppercase font-monospace">PM-KISAN</div></a>
+            <!-- Navbar items-->
+            <div class="d-flex align-items-center mx-3 me-lg-0">           
+                
+                <!-- Navbar buttons-->
+                <div class="d-flex">
+                    
+                    <!-- User profile dropdown-->
+                    <div class="dropdown">
+                        <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
+                        <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
+                            
+                            <li>
+                                <a class="dropdown-item" href="../../Login.aspx">
+                                    <i class="material-icons leading-icon">logout</i>
+                                    <div class="me-3">Logout</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Layout wrapper-->
+
+      <div id="layoutDrawer">
+        <!-- Layout navigation-->
+        <div id="layoutDrawer_nav">
+            <!-- Drawer navigation-->
+            <nav class="drawer accordion drawer-light bg-white" id="drawerAccordion">
+                <div class="drawer-menu">
+                    <div class="nav">
+                        
+                        
+                        <!-- Drawer link (Overview)-->
+                        <a class="nav-link" href="Default.aspx">
+                            <div class="nav-link-icon"><i class="material-icons">dashboard</i></div>
+                            Dashboard
+                        </a>
+                        <!-- Drawer link (Dashboards)-->
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                            <div class="nav-link-icon"><i class="material-icons">language</i></div>
+                            Check Status 
+                            <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                        </a>
+                        <!-- Nested drawer nav (Dashboards)-->
+                        <div class="collapse" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                            <nav class="drawer-menu-nested nav">
+                                <a class="nav-link" href="CheckApplicationStatus.aspx">PM Kisan</a>  
+                                 <a class="nav-link" href="RegistrationStatus.aspx">Registration Status</a>  
+                            </nav>
+                        </div>
+                        <!-- Drawer link (Layouts)-->
+                        <!-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                            Verification
+                            <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                        </a>-->
+                        <!-- Nested drawer nav (Layouts)-->
+                        <!--<div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                            <nav class="drawer-menu-nested nav">
+                                <a class="nav-link" href="#">V1. Update Village Name</a>
+                            </nav>
+                        </div>-->
+                        <!-- Drawer link (Pages)-->
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="nav-link-icon"><i class="material-icons">layers</i></div>
+                            Reports
+                            <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                        </a>
+                        <!-- Nested drawer nav (Pages)-->
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
+                            <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
+                                <a class="nav-link" href="PMKisanV4V5Report.aspx">Daily Report V4 & V5</a>
+                                <a class="nav-link" href="PMkisanSocialAuditData.aspx">Physical Verification Report</a>
+				<a class="nav-link" href="PhysicalVerificationReportNew.aspx">Panchayat wise Physical Verification Report</a>
+                                <a class="nav-link" href="DistrictWiseEKYCData.aspx">EKYC Report</a>
+                               <a class="nav-link" href="TargetEntryReport.aspx">Target Entry Report</a>
+				
+                            </nav>
+                        </div>
+                        <!-- Divider-->
+                        <div class="drawer-menu-divider"></div>
+                        <!-- Drawer section heading (UI Toolkit)-->
+                        <div class="drawer-menu-heading">Recovery</div>
+                        <!-- Drawer link (Components)-->
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-			expanded="false" aria-controls="collapseComponents">
+                            <div class="nav-link-icon"><i class="material-icons">widgets</i></div>
+                            Report
+                            <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                        </a>
+                        <!-- Nested drawer nav (Components)-->
+                        <div class="collapse" id="collapseComponents" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                            <nav class="drawer-menu-nested nav">
+                                <a class="nav-link" href="RecoveryList.aspx">Revovery List New</a>
+                                <a class="nav-link" href="RecoveryEntryList.aspx">Reconcile List Entry</a>
+				<a class="nav-link" href="RecoveryEntryListForReConcile.aspx">Recovery Entry List For ReConcile (NEW)</a>
+				<a class="nav-link" href="ReConcileDaileyEntryReport.aspx">Recovery Entry Report For ReConcile (NEW)</a>
+				<a class="nav-link" href="ReconsileList.aspx">Reconciled List </a>
+				<a class="nav-link" href="RecoveryPartPaymentEntryList.aspx">Recovery Part Payment Entry List </a>
+				<a class="nav-link" href="RecoveryEntryListForReConcileOld.aspx">Recovery Entry List For ReConcile (OLD)</a>
+				<a class="nav-link" href="PendingRecoveryReport.aspx">Recovery Pending </a>
+				<a class="nav-link" href="RecoveryDaileyEntryReport.aspx">Day Wise Recovery Entry Report </a>
+				<a class="nav-link" href="PanchayatWiseRecoveryDaileyEntryReport.aspx">Panchayat/Day Wise Recovery Entry Report </a>
+                                <a class="nav-link" href="ReConsileDataFromBank.aspx">SLBC Report List</a>
+                                <a class="nav-link" href="ReConsileDataFromDAO_SLBC.aspx">Reconsile list by DAO & SLBC</a>
+				<a class="nav-link" href="RecoveredListBy_DAO.aspx">Recovered List By DAO</a>
+				                
+                            </nav>
+                        </div>
+                        
+                        <!-- Drawer link (Utilities)-->
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                            <div class="nav-link-icon"><i class="material-icons">build</i></div>
+                            Forms
+                            <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                        </a>
+                        <!-- Nested drawer nav (Utilities)-->
+                        <div class="collapse" id="collapseUtilities" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                            <nav class="drawer-menu-nested nav">
+                                <a class="nav-link" href="RefundDetailFormNew.aspx">Recovery Entry</a>
+				<a class="nav-link" href="PartPaymentRefundDetailForm.aspx">Part Payment Entry</a>
+                            </nav>
+                        </div>
+                        
+                </div>
+                <!-- Drawer footer        -->
+                <%--<div class="drawer-footer border-top">
+                    <div class="d-flex align-items-center">
+                        <i class="material-icons text-muted">account_circle</i>
+                        <div class="ms-3">
+                            <div class="caption">Logged in as:</div>
+                            <div class="small fw-500">ADMIN</div>
+                        </div>
+                    </div>
+                </div>--%>
+                    </div>
+            </nav>
+        </div>
+    <div id="layoutDrawer_content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+      
+    </div>
+
+        </div>
+    </form>
+
+     <!-- Load Bootstrap JS bundle-->
+    <!--<script src="../cdn.jsdelivr.net/npm/bootstrap%405.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>-->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- Load global scripts-->
+    <script type="module" src="js/material.js"></script>
+    <script src="../js/scripts.js"></script>
+    <!--  Load Chart.js via CDN-->
+    <script src="../js/chart.min.js"></script>
+    <!--  Load Chart.js customized defaults-->
+    <script src="../js/charts/chart-defaults.js"></script>
+    <!--  Load chart demos for this page-->
+    <script src="../js/charts/demos/chart-pie-demo.js"></script>
+    <script src="../js/charts/demos/dashboard-chart-bar-grouped-demo.js"></script>
+    <!-- Load Simple DataTables Scripts-->
+    <script src="../js/datatables/datatables-simple-demo.js"></script>
+    <script src="../js/simple-datatables.min.js"></script>
+    
+    <script>(function () { var js = "window['__CF$cv$params']={r:'7e686c6979fd6ee9',m:'7g7SHkrTY7AiueFcJ41U3P44ONRat9HE_6H8ciWdxk0-1689323634-0-AXht85/YCIz/MFyGwfcqCoFSrtIv+PgzF13ULZEwVv5j'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='cdn-cgi/challenge-platform/h/b/scripts/jsd/556d0c9f/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.nonce = ''; _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e686c6979fd6ee9","version":"2023.4.0","b":1,"token":"6e2c2575ac8f44ed824cef7899ba8463","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

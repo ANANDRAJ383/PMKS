@@ -1,0 +1,25 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageMain.master" AutoEventWireup="true" CodeFile="SendSMS_Bulk.aspx.cs" Inherits="SendSMS_Bulk" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <h2 style="text-align: center; margin-bottom: 20px;">
+            Send SMS
+        </h2>
+    <table class="table-bordered table-responsive table table-striped " style="width: 100%">
+        <tr>
+            <td>Select District</td>
+            <td>
+                <asp:DropDownList ID="DDLDistrict" runat="server"
+                    AutoPostBack="true" OnSelectedIndexChanged="DDLDistrict_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+            <td>Select Block</td>
+
+            <td>
+                <asp:DropDownList ID="DDLBlock" runat="server">
+                </asp:DropDownList>
+            </td>
+        </tr>
+    </table>
+
+</asp:Content>
+

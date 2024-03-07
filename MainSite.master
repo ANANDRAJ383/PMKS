@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainSite.master.cs" Inherits="MainSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width,&#32;initial-scale=1" />
+    <link href="new_css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="new_css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="new_css/animate.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="new_css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="new_css/adminlte.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="new_css/jquery-ui.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="new_css/ionicons.min.html" rel="stylesheet" />
+    <link href="new_css/Custome.css" rel="stylesheet" />
+
+    <script src="new_js/jquery-3.6.3.min.js"></script>
+    <script src="new_js/bootstrap.min.js"></script>
+    <script src="new_js/jquery-ui.min.js"></script>
+    <script src="new_js/main.js"></script>
+    <!-- jQuery Cookie -->
+    <script src="new_js/jquery.cookie.js"></script>
+    <script src="new_js/styleswitch.js"></script>
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header id="header" class="clearfix">
+
+            <div class="midheader">
+                <div class="container-fluid">
+                    <nav class="navbar bg-body-tertiary fixed-top">
+                        <div class="container-fluid">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="logotext ">
+                                    <div class="logotextinner">
+                                        <h1>PM Kisan Samman Nidhi</h1>
+                                        <p>Department of Agriculture </p>
+
+                                        <p>Government of Bihar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 menu">
+                                <div class="mainmenuarea">
+                                    <div class="mainmenu">
+                                        <nav id="mobile-menu" style="display: block;">
+                                            <ul class="mainnavi mr-auto">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="RefundCategory.aspx">Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="https://dbtagriculture.bihar.gov.in/ContactNewPmkisan.html" target="_blank" class="nav-link">Contact Us </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="Login.aspx" class="nav-link">Login</a>
+                                                </li>
+                                                <li class="nav-item helpline">
+                                                    <a class="nav-link" href="Contacts.aspx">
+                                                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                                                        <div class="details">
+                                                            <p>PM-Kisan Helpline No.</p>
+                                                            <h4>0612-2233555/1800-180-1551</h4>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+
+
+                            <div class="mobile_menu">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PM Kisan Samman Nidhi</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="RefundCategory.aspx">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="https://dbtagriculture.bihar.gov.in/ContactNewPmkisan.html" target="_blank">Contact Us</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="Login.aspx">Login</a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </nav>
+
+
+                </div>
+            </div>
+        </header>
+        <!--End Header-->
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+        <div class="footeraerea">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alignitemscenter">
+                            <div class="alignitemscenterinner">
+                                <div class="copyrighttext ">
+                                    <p class="text-center">
+                                        Content on this website is published and managed by PMU PM-KISAN(Bihar),Agriculture Department, 
+                                        <br />
+                                        Govt. of Bihar.
+                For any query regarding this website, please contact the "Pmkisanpmu2@gmail.com/DBT Contact No- 0612-2233555/1800-180-1551"
+                                    </p>
+                                    <p class="text-center">©Agriculture Department, Govt. of Bihar.| All rights reserved.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

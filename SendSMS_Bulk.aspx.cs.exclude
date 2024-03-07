@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+public partial class SendSMS_Bulk : System.Web.UI.Page
+{
+    clsDataAccessPMKisan objcls = new clsDataAccessPMKisan();
+    DataTable _dt = null;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+             BindBlk();
+        }
+
+    }
+
+   
+     void BindBlk()
+    {
+
+        //objcls.storeProcedure.NewStoreProcedure("SP_GetBlock");
+        //objcls.storeProcedure.FieldName = "DistCode";
+        //objcls.storeProcedure.FieldValue = new object[] { DDLDistrict.SelectedValue };
+        //DataTable dt = objcls.storeProcedure.getData();
+        //DDLBlock.DataValueField = "BlockCode";
+        //DDLBlock.DataTextField = "BlockName";
+        //DDLBlock.DataSource = dt;
+        //DDLBlock.DataBind();
+        //DDLBlock.Items.Insert(0, new ListItem("ALL Block", "0"));
+
+    }
+
+ 
+}

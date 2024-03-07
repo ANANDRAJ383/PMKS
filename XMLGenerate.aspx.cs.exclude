@@ -1,0 +1,801 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+//using Microsoft.ApplicationBlocks.Data;
+using System.IO;
+using System.Collections;
+using System.Text;
+using esms_client;
+using System.Security.Cryptography;
+using System.Configuration;
+using System.Net;
+
+public partial class XMLGenerate : System.Web.UI.Page
+{
+    SqlCommand cmd = new SqlCommand();
+    clsDataAccess cls = new clsDataAccess();
+    string abc = System.Configuration.ConfigurationManager.ConnectionStrings["KrishII"].ConnectionString;
+    SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["KrishII"].ConnectionString);
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            fillDist();
+            fillDistSMS();
+            ddlfill();
+            ddlfillStatus();
+            ddlfillStatusbrbn();
+            ddlfilldistricts();
+        }
+
+    }
+    protected void ddlfillStatus()
+    {
+        DataTable dtt = cls.GetDataTable("SELECT DISTINCT Status FROM SendSMS_BRBN  where upDATEfLAg is null order by Status");
+        if (dtt.Rows.Count > 0)
+        {
+            DropDownList101.DataSource = dtt;
+            DropDownList101.DataValueField = "Status";
+            DropDownList101.DataTextField = "Status";
+            DropDownList101.DataBind();
+        }
+
+    }
+    protected void btn1_Click(object sender, EventArgs e)
+    {
+        int i = 0;
+        string abc = "select  * from PMKISAN_SammanNidhi_dump where Status = 9 and AREA is null";
+        DataTable dt = cls.GetDataTable(abc);
+        if (dt.Rows.Count > 0)
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                string query = "select   * from Registration_PMKIsan_LandDetails where RegistrationID='" + dr["RegistrationID"].ToString() + "'";
+                DataTable dtNew = cls.GetDataTable(query);
+                if (dtNew.Rows.Count > 0)
+                {
+                    foreach (DataRow dra in dtNew.Rows)
+                    {
+                        i = i + 1;
+                        if (i == 1)
+                        {
+                            string queryUpdate = "update PMKISAN_SammanNidhi_DUMP set Sr_No=1, Survey_Khata_No='" + dra["khatano"].ToString() + "', Khasra_Drag_No='" + dra["keshraNo"].ToString() + "', Area='" + dra["rakwa"].ToString() + "' where RegistrationID='" + dra["RegistrationID"].ToString() + "'";
+                            try
+                            {
+                                cn.Open();
+                                SqlDataAdapter da = new SqlDataAdapter(queryUpdate, cn);
+                                da.SelectCommand.ExecuteNonQuery();
+                            }
+                            catch (Exception ex) { }
+                            finally { cn.Close(); }
+                        }
+                    }
+                    i = 0;
+                }
+            }
+        }
+        Label101.Text = "Update sucessfull.............!!!!!!!!!!!";
+    }
+
+    protected void Button707_Click(object sender, EventArgs e)
+    {
+
+        cn.Open();
+        for (int i = 1; i <= 314; i++)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("update SendSMS_BRBN set status=" + i + " where mobileno in  (select top 10000 mobileno from SendSMS_BRBN where status is null)", cn);
+            da.SelectCommand.ExecuteNonQuery();
+
+        }
+
+        cn.Close();
+        ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total Updatec lot no........314..');", true);
+    }
+
+    protected void Button66_Click(object sender, EventArgs e)
+    {
+        SMSHttpPostClient sms = new SMSHttpPostClient();
+        //sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9470880581", txtSms.Text.Trim() , "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        try
+        {
+            //SendSMS_BRBN(Mobileno)
+            DataTable dtsms = cls.GetDataTable("select distinct Mobileno from SendSMS_BRBN where Status='" + DropDownList101.SelectedValue + "' ");
+            if (dtsms.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtsms.Rows)
+                {
+                    sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", dr["Mobileno"].ToString(), txtSms.Text.Trim(), "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                }
+                cn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter("update SendSMS_BRBN set upDATEfLAg=1 where status='" + DropDownList101.SelectedValue + "'", cn);
+                da.SelectCommand.ExecuteNonQuery();
+                cn.Close();
+                ddlfillStatus();
+                ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND..........." + dtsms.Rows.Count.ToString() + "..');", true);
+            }
+
+        }
+        catch (Exception ex)
+        { }
+        finally { }
+    }
+    protected void ddlfill()
+    {
+        DataTable dtt = cls.GetDataTable("SELECT DISTINCT LOTNO FROM VILLSMS_OFMAS where status is null order by lotno");
+        if (dtt.Rows.Count > 0)
+        {
+            ddlLot.DataSource = dtt;
+            ddlLot.DataValueField = "Lotno";
+            ddlLot.DataTextField = "Lotno";
+            ddlLot.DataBind();
+        }
+
+    }
+
+
+    protected void fillDistSMS()
+    {
+        DataTable dt = cls.GetDataTable("select DistLGCode as distcode, DistName   from districts order by distname");
+        DropDownList4.DataSource = dt;
+        DropDownList4.DataTextField = "distname";
+        DropDownList4.DataValueField = "distcode";
+        DropDownList4.DataBind();
+        DropDownList4.Items.Insert(0, new ListItem("--Select --", "0"));
+    }
+
+    protected void Button14_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+            DataSet ds = CreateDynamicDataSetPFMSRejected();
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                try
+                {
+                    cn.Open();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter("insert into kkc (id) values ('" + dr["Identity_Proof_No"].ToString() + "')", cn);
+                        da.SelectCommand.ExecuteNonQuery();
+                    }
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    cn.Close();
+                }
+
+                string FileName = "" + DateTime.Now.ToString("ddMMyyyyHHmm") + "Farmer.xml";
+                ds.WriteXml(Server.MapPath(FileName));
+                lblResult.Text = "XML File Generated...........";
+                StringWriter sw = new StringWriter();
+                ds.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+                string s = sw.ToString();
+                string attachment = "attachment;filename=" + FileName + "";
+                Response.ClearContent();
+                Response.ContentType = "application/xml";
+                Response.AddHeader("content-disposition", attachment);
+                Response.Write(s);
+                //Response.Write("XML File Generated...........");
+                Response.End();
+                ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('XML File Generated..........." + ds.Tables[0].Rows.Count + "..');", true);
+
+
+
+            }
+        }
+
+
+        catch
+        {
+
+        }
+        finally
+        {
+            cn.Close();
+        }
+    }
+    private DataSet CreateDynamicDataSetPFMSRejected()
+    {
+        DataSet ds = new DataSet();
+        try
+        {
+            cn.Open();
+            //-------------------------DUMMY VILLAGE
+
+            //   SqlDataAdapter da = new SqlDataAdapter(@"select top 20000  State_Ref_Number='NULL',[RefNo], StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category, Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name, HomeAddress='','1'  as Ownership_Single_Joint , Sr_No='' , Survey_Khata_No ,   Khasra_Drag_No , Area,  case when FarmerType is null  THEN 1 else FarmerType end as FarmerType from [PMKisan1stLevel_1178] WHERE STATUS is null ", cn);
+
+            //   FIRST LEVEL REGISTRATION................
+            // SqlDataAdapter da = new SqlDataAdapter(@"select top 20000  State_Ref_Number='NULL',[RefNo], StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category, Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name, HomeAddress='','1'  as Ownership_Single_Joint , Sr_No , Survey_Khata_No ,  Khasra_Drag_No , Area,  case when FarmerType is null  THEN 1 else FarmerType end as FarmerType from PMKISAN_SammanNidhi1stLevel_Land  WHERE STATUS =9", cn);
+
+            // SqlDataAdapter da = new SqlDataAdapter(@"select top 20000  State_Ref_Number='NULL',[RefNo], StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category, Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name, HomeAddress='','1'  as Ownership_Single_Joint , Sr_No , Survey_Khata_No ,  Khasra_Drag_No , Area,  case when FarmerType is null  THEN 1 else FarmerType end as FarmerType from PMKISAN_SammanNidhi1stLevel_Land  WHERE STATUS =9", cn);
+
+            //SqlDataAdapter da = new SqlDataAdapter(@"select TOP 20000  [StateCode], [DistrictCode], [TownCode], [WardCode], [Farmer_Name], [Gender], [Farmer_Category], [Identity_Proof_Type],[Identity_Proof_No], [IFSC_Code], [Bank_Account_Number], [MobileNo], [DOB], [Father_Mother_Husband_Name], HomeAddress='', Ownership_Single_Joint='', Sr_No='', Survey_Khata_No , Khasra_Drag_No , Area , [FarmerType] FROM PMKISAN_UrbanData where status=9", cn);
+
+            //SqlDataAdapter da = new SqlDataAdapter(@"select TOP 20000  [StateCode], [DistrictCode], [TownCode], [WardCode], [Farmer_Name], [Gender], [Farmer_Category], [Identity_Proof_Type],[Identity_Proof_No], [IFSC_Code], [Bank_Account_Number], [MobileNo], [DOB], [Father_Mother_Husband_Name], HomeAddress='', Ownership_Single_Joint='', Sr_No='', Survey_Khata_No , Khasra_Drag_No , Area , [FarmerType] FROM [PMKISAN_UrbanData179636]  where status=9", cn);
+
+
+            // SqlDataAdapter da = new SqlDataAdapter(@"select TOP 20000  a.[StateCode], a.[DistrictCode], c.TownCode, c.WardCode , [Farmer_Name], [Gender], [Farmer_Category], [Identity_Proof_Type],[Identity_Proof_No], [IFSC_Code], [Bank_Account_Number], [MobileNo], [DOB], [Father_Mother_Husband_Name],  HomeAddress='', Ownership_Single_Joint='', Sr_No, Survey_Khata_No , Khasra_Drag_No , Area , [FarmerType] FROM PMKISAN_1stLevel_UrbanCodeCorrection a inner join Panchayat   b  on a.TownCode=b.PanchayatCode    inner join Urban_LG_New c on c.WardCode=a.WardCode where a.Status=9", cn);
+
+            //SqlDataAdapter da = new SqlDataAdapter(@"select State_Ref_Number='NULL', StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category, Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name, HomeAddress='', Ownership_Single_Joint='', Sr_No='', Survey_Khata_No='', Khasra_Drag_No='', Area='',  case when FarmerType is null  THEN 1 else FarmerType end as FarmerType from PMKISAN_SammanNidhi where   Identity_Proof_No  in (select aadharNumber from [PMKisan_XXX])", cn);
+
+            //send fresh data(PMKISAN)
+            // SqlDataAdapter da = new SqlDataAdapter(@"select TOP 20000  State_Ref_Number='NULL', StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category, Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name, HomeAddress='', Ownership_Single_Joint='', Sr_No='', Survey_Khata_No , Khasra_Drag_No , Area ,  case when FarmerType is null  THEN 1 else FarmerType end as FarmerType from PMKISAN_SammanNidhi where  CONVERT(char(11), SendDate,106)='14 JuL 2021' and VillageCode is not null and status=9", cn); // Status=9  AND
+
+            //SqlDataAdapter da = new SqlDataAdapter(@"select TOP 20000  State_Ref_Number='NULL', StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category, Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name, HomeAddress='', Ownership_Single_Joint='', Sr_No='' , Survey_Khata_No , Khasra_Drag_No , Area ,  case when FarmerType is null  THEN 1 else FarmerType end as FarmerType from PMKISAN_SammanNidhi where  Status=9 and CONVERT(char(11), SendDate,106)='19 Nov 2020' and VillageCode is not null and Identity_Proof_No not in ('271700354096')", cn);
+
+            //SqlDataAdapter da = new SqlDataAdapter(@" select top 20000  State_Ref_Number='NULL' , Ref_Number, StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category,Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name,  HomeAddress='', Ownership_Single_Joint='', Sr_No='', Survey_Khata_No='', Khasra_Drag_No='', Area='',  case when FarmerType is null  THEN 1 else  FarmerType end as FarmerType from PMKISAN_SammanNidhi_nAMEcORRECTION where  Status=9 ", cn);
+
+
+            //SqlDataAdapter da = new SqlDataAdapter(@"select TOP 20000  State_Ref_Number='NULL', StateCode, DistrictCode, Sub_District_Code, BlockCode, VillageCode, Farmer_Name, Gender, Farmer_Category, Identity_Proof_Type, Identity_Proof_No, IFSC_Code, Bank_Account_Number, MobileNo, CONVERT(CHAR(10),DOB,120) DOB, Father_Mother_Husband_Name, HomeAddress='', Ownership_Single_Joint='', Sr_No='', Survey_Khata_No='', Khasra_Drag_No='', Area='',  case when FarmerType is null  THEN 1 else FarmerType end as FarmerType from PMKISAN_ViilageCodeCorrection where  Status=9  and VillageCode is not null and Identity_Proof_No not in ('271700354096')", cn);
+            //SqlDataAdapter da = new SqlDataAdapter("select  Farmer_Registration_No as Farmer_Registration_No,  StateCode, DistrictCode,  Farmer_Name,  Identity_Proof_Type, Identity_Proof_No, upper(IFSC_Code) IFSC_Code, Bank_Account_Number from PMKISAN_SammanNidhiPFMSReject where   status is null and [Identity_Proof_No] not in ('215296135735','307469594361','372309920624','442866142789','702991655648')", cn);
+            // SqlDataAdapter da = new SqlDataAdapter("select  [Farmer_Registration_No], [StateCode], [DistrictCode], [Farmer_Name], [Identity_Proof_No] from  PMKISAN_AadharNameCorrection where status is null", cn);
+            //SqlDataAdapter da = new SqlDataAdapter(@"select  [Farmer_Registration_No], [StateCode], [DistrictCode], [Farmer_Name],Identity_Proof_Type, [Identity_Proof_No] ,IFSC_Code,Bank_Account_Number from  [PMKISAN_SammanNidhiPFMSReject]  where status is null", cn);
+            //SqlDataAdapter da = new SqlDataAdapter(@"select  [Farmer_Registration_No], [StateCode], [DistrictCode], [Farmer_Name],Identity_Proof_Type, [Identity_Proof_No] ,IFSC_Code,Bank_Account_Number from  PMKISAN_SammanNidhi_IIndPFMSRejected where status=5", cn);
+            SqlDataAdapter da = new SqlDataAdapter("select  [Farmer_Registration_No], [StateCode], [DistrictCode], [Farmer_Name], [Identity_Proof_No] from  PMKISAN_AadharNameCorrection where status is null", cn);
+            ds.DataSetName = "DocumentElement";
+            da.Fill(ds, "Farmer");
+        }
+        catch
+        {
+
+        }
+        finally
+        {
+            cn.Close();
+        }
+        return ds;
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+        // DataTable dt = cls.GetDataTable("select  count(*) as cnt from PMKISAN_SammanNidhi where CONVERT(char(11), SendDate,106)='26 Nov 2020' and status=9 and VillageCode is not null and Identity_Proof_No not in ('271700354096')");//PMKISAN_SammanNidhiPFMSReject  where status is null  and Identity_Proof_No not in ('271700354096')");//PMKISAN_SammanNidhi where CONVERT(char(11), SendDate,106)='11 Jan 2020' and status=9 and VillageCode is not null and Identity_Proof_No not in ('271700354096')");//PMKISAN_SammanNidhiPFMSReject  where status is null  and Identity_Proof_No not in ('271700354096')");//PMKISAN_SammanNidhi where CONVERT(char(11), SendDate,106)='03 Dec 2019' and status=9 and VillageCode is not null and Identity_Proof_No not in ('271700354096')");//PMKISAN_AadharNameCorrection  where status is null  and Identity_Proof_No not in ('271700354096')");//PMKISAN_SammanNidhi where CONVERT(char(11), SendDate,106)='19 Nov 2019' and status=9 and VillageCode is not null and Identity_Proof_No not in ('27170035409//6')");//PMKISAN_ViilageCodeCorrection where status=9 and VillageCode is not null and Identity_Proof_No not in ('271700354096')");//PMKISAN_SammanNidhi where CONVERT(char(11), SendDate,106)='31 Oct 2019' and status=9 and VillageCode is not null and Identity_Proof_No not in ('271700354096')");// PMKISAN_SammanNidhiPFMSReject  where status is null  and Identity_Proof_No not in ('271700354096')");//PMKISAN_SammanNidhiPFMSReject  where status is null  and Identity_Proof_No not in ('271700354096')");
+
+
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt from [PMKisan1stLevel_1178] where status is null"); 
+
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt from PMKISAN_SammanNidhi where CONVERT(char(11), SendDate,106)='14 Jul 2021' and  VillageCode is not null and status=9"); //status=9 and
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt from PMKISAN_SammanNidhi where CONVERT(char(11), SendDate,106)='10 Nov 2020' and status=9 and VillageCode is not null and Identity_Proof_No not in ('271700354096')");
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt FROM  PMKISAN_UrbanDataFirstLevel where status=9");//[PMKISAN_SammanNidhiPFMSReject] where status is null  and Identity_Proof_No not in ('271700354096')");//from PMKISAN_UrbanData where status=1");
+
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt from [PMKISAN_SammanNidhiPFMSReject] where status is null ");
+
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt from [PMKISAN_SammanNidhiPFMSReject] where status is null  and Identity_Proof_No not in ('271700354096')");// is null  and Identity_Proof_No not in ('271700354096')
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt FROM  PMKISAN_UrbanData where status=9");
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt FROM  [PMKISAN_UrbanData179636] where status=9");
+        //DataTable dt = cls.GetDataTable("select  count(*) as cnt FROM  PMKISAN_SammanNidhi1stLevel_Land  WHERE STATUS=9");
+
+
+        DataTable dt = cls.GetDataTable("select  count(*) as cnt from PMKISAN_AadharNameCorrection  where status is null  and Identity_Proof_No not in ('271700354096')");
+
+        if (dt.Rows.Count > 0)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total XML File will be Generate Count..........." + dt.Rows[0]["cnt"].ToString() + "..');", true);
+        }
+    }
+
+    protected void btnPP_Click(object sender, EventArgs e)
+    {
+        DataTable dt = cls.GetDataTable("select  count(*) as cnt from ParaliDetails where nodal_status=1");
+        if (dt.Rows.Count > 0)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total Block Farmer..........." + dt.Rows[0]["cnt"].ToString() + "..');", true);
+        }
+    }
+
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+        SMSHttpPostClient sms = new SMSHttpPostClient();
+        try
+        {
+            DataTable dtsms = cls.GetDataTable("select distinct Mobileno from loginmaster where userrole='AC' and len(MobileNo)<>0 and substring(MobileNo,1,1)<>0");
+            if (dtsms.Rows.Count > 0)
+            {
+                sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "7783864005", "सूचित किया जाता है कि कृषि इनपुट अनुदान(2019-20) के आवेदन के सत्यापन कार्य की अंतिम तिथि 25-01-2020 है | जिसके बाद आवेदन स्वत: आगे स्तर पर भेज दिया जायेगा | आपके लॉग इन में आवेदन लंबित रहने की स्थिति में विभागीय कारवाई की जा सकती है | सत्यापन का कार्य जल्द समाप्त करें, कृषि विभाग", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+
+                sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "8789578914", "सूचित किया जाता है कि कृषि इनपुट अनुदान(2019-20) के आवेदन के सत्यापन कार्य की अंतिम तिथि 25-01-2020 है | जिसके बाद आवेदन स्वत: आगे स्तर पर भेज दिया जायेगा | आपके लॉग इन में आवेदन लंबित रहने की स्थिति में विभागीय कारवाई की जा सकती है | सत्यापन का कार्य जल्द समाप्त करें, कृषि विभाग", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                foreach (DataRow dr in dtsms.Rows)
+                {
+                    sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", dr["MobileNo"].ToString(), "सूचित किया जाता है कि कृषि इनपुट अनुदान(2019-20) के आवेदन के सत्यापन कार्य की अंतिम तिथि 25-01-2020 है | जिसके बाद आवेदन स्वत: आगे स्तर पर भेज दिया जायेगा | आपके लॉग इन में आवेदन लंबित रहने की स्थिति में विभागीय कारवाई की जा सकती है | सत्यापन का कार्य जल्द समाप्त करें, कृषि विभाग", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                }
+
+                //string update = "Update VILLSMS_OFMAS set status=1 where lotno='" + ddlLot.SelectedValue + "' ";
+                //cn.Open();
+                //SqlDataAdapter d = new SqlDataAdapter(update, cn);
+                //int i = d.SelectCommand.ExecuteNonQuery();
+                //if (i > 0)
+                //{
+                ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND..........." + dtsms.Rows.Count.ToString() + "..');", true);
+                //}
+            }
+        }
+        catch (Exception ex)
+        { }
+        finally { }
+
+
+        // SMSHttpPostClient sms = new SMSHttpPostClient();
+        // try
+        // {
+        //     DataTable dtsms = cls.GetDataTable("select * from VILLSMS_OFMAS where  lotno='" + ddlLot.SelectedValue + "'");
+        //     if (dtsms.Rows.Count > 0)
+        //    {
+        //      foreach (DataRow dr in dtsms.Rows)
+        //      {
+        //         sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", dr["MOBILENUMBER"].ToString(), "प्रिय किसान, कृषि कल्याण अभियान योजना अंतर्गत कृषि यंत्रो पर अनुदान हेतु http://farmech.bih.nic.in पर ऑनलाइन आवेदन 25-07-2019 तक आप कर सकते है| कृषि विभाग ,बिहार मोबाइल न०:-9386140408", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //     }
+        //     if (ddlLot.SelectedValue == "1")
+        //    {
+        //       sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9470880581", "प्रिय किसान, कृषि कल्याण अभियान योजना अंतर्गत कृषि यंत्रो पर अनुदान हेतु http://farmech.bih.nic.in पर ऑनलाइन आवेदन 25-07-2019 तक आप कर सकते है| कृषि विभाग ,बिहार मोबाइल न०:-9386140408", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //       sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9470880581", "प्रिय किसान, कृषि कल्याण अभियान योजना अंतर्गत कृषि यंत्रो पर अनुदान हेतु http://farmech.bih.nic.in पर ऑनलाइन आवेदन 25-07-2019 तक आप कर सकते है| कृषि विभाग ,बिहार मोबाइल न०:-9386140408", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //  }
+        //    string update = "Update VILLSMS_OFMAS set status=1 where lotno='" + ddlLot.SelectedValue + "' ";
+        //    cn.Open();
+        //    SqlDataAdapter d = new SqlDataAdapter(update, cn);
+        //   int i = d.SelectCommand.ExecuteNonQuery();
+        //  if (i > 0)
+        // {
+        //     ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND..........." + dtsms.Rows.Count.ToString() + "..');", true);
+        //  }
+        // }
+        // }
+        // catch (Exception ex)
+        // { }
+        //finally { }
+
+    }
+
+    protected void btnPPSend_Click(object sender, EventArgs e)
+    {
+        SMSHttpPostClient sms = new SMSHttpPostClient();
+        try
+        {
+            DataTable dtsms = cls.GetDataTable("select * from paralidetails where nodal_status=1");
+            if (dtsms.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtsms.Rows)
+                {
+                    sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", dr["MobileNumber"].ToString(), "कृषि विभाग, बिहार द्वारा आपका पंजीकरण फसल अवशेष जलाने के कारण तीन वर्षो के लिये बाधित कर दिया गया है, फसल अवशेष प्रबंधन के लिये https://youtu.be/Gcpn_33tG-A लिंक को देखे| कृषि विभाग, बिहार| ", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                }
+
+                sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "7783864005", "कृषि विभाग, बिहार द्वारा आपका पंजीकरण फसल अवशेष जलाने के कारण तीन वर्षो के लिये बाधित कर दिया गया है, फसल अवशेष प्रबंधन के लिये https://youtu.be/Gcpn_33tG-A लिंक को देखे| कृषि विभाग, बिहार| ", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "8789578914", "कृषि विभाग, बिहार द्वारा आपका पंजीकरण फसल अवशेष जलाने के कारण तीन वर्षो के लिये बाधित कर दिया गया है, फसल अवशेष प्रबंधन के लिये https://youtu.be/Gcpn_33tG-A लिंक को देखे| कृषि विभाग, बिहार| ", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND..........." + dtsms.Rows.Count.ToString() + "..');", true);
+            }
+        }
+        catch (Exception ex)
+        { }
+        finally { }
+
+    }
+
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+
+
+
+        //for (int i = 1; i <= 18; i++)
+        //{
+        //    DataTable dtsms = cls.GetDataTable("select TOP 2500 * from VILLSMS_OFMAS where LOTNO is null");
+        //    if (dtsms.Rows.Count > 0)
+        //    {
+        //        foreach (DataRow dttr in dtsms.Rows)
+        //        {
+        //            cn.Open();
+        //            SqlDataAdapter d = new SqlDataAdapter("update VILLSMS_OFMAS set lotno=" + i + " where MOBILENUMBER='" + dttr["MOBILENUMBER"].ToString() + "'", cn);
+        //            int ii = d.SelectCommand.ExecuteNonQuery();
+        //            if (ii > 0)
+        //            {
+        //                cn.Close();
+        //            }
+
+        //        }
+        //    }
+
+
+        DataTable dt = cls.GetDataTable("select count(*) cnt from VILLSMS_OFMAS where status IS NULL");
+        if (dt.Rows.Count > 0)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS REMAINING..........." + dt.Rows[0]["cnt"].ToString() + "..');", true);
+        }
+
+    }
+    protected void Button15_Click(object sender, EventArgs e)
+    {
+        int i = 0;
+        DataTable dt = cls.GetDataTable(@"SELECT * FROM Diesel_SubsidyApplyKharif201920 WHERE Registration_ID in ( 
+            select  Registration_ID from Diesel_SubsidyApplyKharif201920 where Croptype=N'धान'
+            GROUP BY Registration_ID
+            HAVING SUM(NoofApply ) >3)");
+        if (dt.Rows.Count > 0)
+        {
+            cn.Open();
+            int abc = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                i++;
+                DataTable dttt = cls.GetDataTable("SELECT * FROM Diesel_SubsidyApplyKharif201920 WHERE Registration_ID='" + dr["Registration_ID"].ToString() + "' order by slno asc");
+                if (dttt.Rows.Count > 0)
+                {
+                    abc = abc + Convert.ToInt16(dttt.Rows[0]["NoofApply"].ToString());
+                    if (abc > 3)
+                    {
+                        SqlCommand cmd = new SqlCommand("update Diesel_SubsidyApplyKharif201920 set AC_Status=9  where Application_ID='" + dr["Application_ID"].ToString() + "'");
+                        cmd.Connection = cn;
+                        cmd.ExecuteNonQuery();
+                        abc = 0;
+                    }
+                    else
+                    {
+                    }
+
+                }
+
+            }
+            cn.Close();
+            ScriptManager.RegisterStartupScript(Page, GetType(), "sskkk", "alert('Total Data Updated " + i + "  Lots...');", true);
+        }
+    }
+
+    protected void fillDist()
+    {
+        DataTable dt = cls.GetDataTable("select distcode, distname from districts order by distname");
+        DropDownList1.DataSource = dt;
+        DropDownList1.DataTextField = "distname";
+        DropDownList1.DataValueField = "distcode";
+        DropDownList1.DataBind();
+        DropDownList1.Items.Insert(0, new ListItem("--Select --", "0"));
+    }
+
+    protected void fillBlocks()
+    {
+        //DropDownList ddlDist = (e.Row.FindControl("ddldist") as DropDownList);
+        DataTable dt = cls.GetDataTable("select bLOCKnAME, BlockCode from blocks where distcode='" + DropDownList1.SelectedValue + "' order by bLOCKnAME");
+        DropDownList2.DataSource = dt;
+        DropDownList2.DataTextField = "bLOCKnAME";
+        DropDownList2.DataValueField = "BlockCode";
+        DropDownList2.DataBind();
+        DropDownList2.Items.Insert(0, new ListItem("--Select --", "0"));
+
+    }
+
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        fillBlocks();
+    }
+
+    protected void Button6_Click(object sender, EventArgs e)
+    {
+        DataTable dt = cls.GetDataTable("select count(*) cnt from  [dbo].[Registration]  where BLOCKCODE='" + DropDownList2.SelectedValue + "' ");
+        if (dt.Rows.Count > 0)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS REMAINING:- " + dt.Rows[0]["cnt"].ToString() + "..');", true);
+        }
+
+    }
+
+    protected void Button7_Click(object sender, EventArgs e)
+    {
+        string mobileNos = "";
+      //  SMSHttpPostClient1 otpmsg = new SMSHttpPostClient1();
+
+
+        try
+        {
+            DataTable dtsms = cls.GetDataTable("select Mobilenumber from  [dbo].[Registration]  where BLOCKCODE='" + DropDownList2.SelectedValue + "'");
+            if (dtsms.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtsms.Rows)
+                {
+                    mobileNos = mobileNos + dr["Mobilenumber"].ToString() + ",";
+                    string mobileNoTotal = mobileNos.TrimEnd(',');
+                 //   otpmsg.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", mobileNoTotal, "कृषि विभाग बिहार द्वारा सूचित किया जाता है कि यूरिया का निर्धारित मूल्य 266.50 रूपये प्रति बोरा (45 किलो) है| अधिक मूल्य पर बिक्री की शिकायत 0612-2233555 पर करें सुबह 10.00 बजे से शाम 6:00 बजे तक{#var#}।- Bihar Government.", "35fc8f80-e0bc-469e-9a93-646d7d453552", "1307161182073909271");
+                }
+            }
+        }
+        catch (Exception ex)
+        { }
+        finally { }
+    }
+
+    protected void Button8_Click(object sender, EventArgs e)
+    {
+        // SMSHttpPostClient sms = new SMSHttpPostClient();
+        // try
+        //{
+
+        //sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "7004626510", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि निदेशक, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        // sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "8789578914", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //  sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9473191478", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        // sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9852827828", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        // sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "7783864005", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        // sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9431818708", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        // sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9431818763", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9431818705", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //  sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9431818735", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //  sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9431818704", "प्रिय किसान भाईयों, रबी 2019 में अनुमानित दर पर बीज प्राप्त करने हेतु DBT पोर्टल पर आवेदन दे सकते हैं| कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");               
+        ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND ');", true);
+
+        //}
+        //catch (Exception ex)
+        // { }
+        // finally { }
+
+        string fileName = "2301404225964.pdf";
+        string filepath = "http:\\164.100.130.206\\fds\\LPCOlaVrishti\\2301404225964.pdf";
+        Response.AddHeader("Content-Disposition", "attachment;filename=\"" + fileName + "\"");
+        Response.TransmitFile(filepath);
+        Response.End();
+    }
+    protected void btnUpdate_Click(object sender, EventArgs e)
+    {
+        //int l = 0;
+        try
+        {
+            DataTable dt = cls.GetDataTable("select * from [New_Master] order by slno");
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    //1705 TIMES 
+                    //ONE ID AND ONe DISTRICT ID RUN EVERY TIME
+                    int l = 0;
+                    string query = " and districtCode='" + dr["distcode"].ToString() + "' AND convert(date, Entry_Date,103) >='01 Nov 2019' and convert(date, Entry_Date,103) <='31 Dec 2019'";//AND convert(date, Entry_Date,103) >='01 Apr 2019' and convert(date, Entry_Date,103) <='31 Aug 2019'
+                    DataTable Dteg = cls.GetDataTable(query);
+                    if (Dteg.Rows.Count > 0)
+                    {
+                        for (int i = 0; i <= 300; i++)
+                        {
+                            l = l + 1;
+                            if (l % 5 == 0)
+                            {
+                                try
+                                {
+                                    cn.Open();
+                                    //BASIS OF REGISTRATION ID  (60 TIMES RUN UDATE QUERY)--1705*60=1,02,300‬
+                                    //SqlDataAdapter da = new SqlDataAdapter(" where  registration_id='" + Dteg.Rows[i]["registration_id"].ToString() + "'", cn);// registration_id='" + Dteg.Rows[i]["registration_id"].ToString() + "'
+                                    //da.SelectCommand.ExecuteNonQuery();
+                                }
+                                catch { }
+                                finally { cn.Close(); }
+                            }
+                        }
+                    }
+                }
+                ScriptManager.RegisterStartupScript(Page, GetType(), "msg", "alert('All data updated...!!!!!!!!!!!');", true);
+            }
+        }
+        catch (Exception ex)
+        {
+        }
+        finally { }
+    }
+    protected void Button222_Click(object sender, EventArgs e)
+    {
+        //string q = "select * from UPDATEREASON";
+        //DataTable dt = cls.GetDataTable(q);
+
+        int i = 0;
+        //if (dt.Rows.Count > 0)
+        //{
+        //    foreach (DataRow dr in dt.Rows)
+        //    {
+        string select = @"select top 10000* from Diesel_SubsidyApplyKharif201920 where (AC_Remarks= 'Reject'or changereason='Reject')and convert(date,AC_ActionDate,106) <= '16 Oct 2019' and  AC_Status=2";
+        DataTable dts = cls.GetDataTable(select);
+        foreach (DataRow drr in dts.Rows)
+        {
+            try
+            {
+                string qq = "select * from UPDATEREASON";
+                DataTable dtr = cls.GetDataTable(qq);
+                i = i + 1;
+                if (i > 29)
+                {
+                    i = 0;
+                }
+                string update = @"UPDATE Diesel_SubsidyApplyKharif201920 SET AC_Remarks='" + dtr.Rows[i]["REJECTREASON"].ToString() + "',changereason='" + dtr.Rows[i]["REJECTREASON"].ToString() + "' WHERE application_id='" + drr["application_id"].ToString() + "'";
+                cmd.CommandText = update;
+                cmd.Connection = cn;
+                cn.Open();
+                int I = cmd.ExecuteNonQuery();
+                if (I > 0)
+                {
+
+                }
+
+            }
+            catch (Exception ex) { }
+            finally { cn.Close(); }
+        }
+    }
+    protected void Button115_Click(object sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(TextBox1.Text.Trim()))
+        {
+            TextBox1.Focus();
+            return;
+        }
+        if (string.IsNullOrEmpty(TextBox2.Text.Trim()))
+        {
+            TextBox2.Focus();
+            return;
+        }
+
+        int i = Convert.ToInt16(TextBox1.Text.Trim());
+        int j = Convert.ToInt16(TextBox2.Text.Trim());
+
+        if (i == 20 && j == 4)
+        {
+            //division(i, j);
+            pnlxxx.Visible = true;
+        }
+        else
+        {
+            pnlxxx.Visible = false;
+            ScriptManager.RegisterStartupScript(Page, GetType(), "msg", "alert('Exception caught: Please enter correct number');", true);
+        }
+
+    }
+
+    protected void Button88_Click(object sender, EventArgs e)
+    {
+        DataTable dt = cls.GetDataTable("select count(*) cnt from [SelfReg] where districtcode ='" + DropDownList4.SelectedValue + "'");
+        if (dt.Rows.Count > 0)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS ..........." + dt.Rows[0]["cnt"].ToString() + "..');", true);
+        }
+
+    }
+
+    protected void Button99_Click(object sender, EventArgs e)
+    {
+
+        SMSHttpPostClient sms = new SMSHttpPostClient();
+        //try
+        // {
+        // DataTable dtsms = cls.GetDataTable("select * from SelfReg where districtcode='" + DropDownList4.SelectedValue + "'");
+        // if (dtsms.Rows.Count > 0)
+        // {
+        // foreach (DataRow dr in dtsms.Rows)
+        // {
+        //  sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", dr["MobileNo"].ToString(), "प्रिय किसान, सूचित किया जाता है कि पी० एम० किसान योजना में आपने सीधे भारत सरकार के पोर्टल पर आवेदन दिया है | योजना का लाभ लेने के लिए आपको कृषि विभाग के डी० बी० पोर्टल पर पंजीकृत होना अनिवार्य है | कृषि विभाग, बिहार सरकार|", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+        //   }
+        //  ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND..........." + dtsms.Rows.Count.ToString() + "..');", true);
+        // }
+        //}
+        //catch (Exception ex)
+        // { }//finally { }
+
+        sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "7000878977", "आपके पंचायत का मौसम पूर्वानुमान:17DEC2019 1730 IST (12 hr FCST) , आसमान साफ़ रहेगा (Clear Sky) ,मौसम में भारी कमी नमी बनी रहेगी (Very Low Humidity) ,वर्षा की कोई संभावना नहीं हैं (No Rains), तापमान 24.60°C रहेगा, हल्की हवा चलने की संभावना है (Light Winds),हवा पश्चिम की दिशा में चलेगी (Westerly winds), मेघदूत योजना, कृषि विभाग, बिहार सरकार |", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+    }
+
+
+    // BRBN Second SMS................05-08-2020
+    protected void btnupdatesms_Click(object sender, EventArgs e)
+    {
+        cn.Open();
+        for (int i = 1; i <= 1571; i++)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("update SendSMS2nd_BRBN set status=" + i + " where mobileno in  (select top 2000 mobileno from SendSMS2nd_BRBN where status is null)", cn);
+            da.SelectCommand.ExecuteNonQuery();
+        }
+        cn.Close();
+        ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total Updatec lot no........1571..');", true);
+    }
+    protected void ddlfillStatusbrbn()
+    {
+        DataTable dtt = cls.GetDataTable("SELECT DISTINCT Status FROM SendSMS2nd_BRBN where upDATEfLAg is null order by Status");
+        if (dtt.Rows.Count > 0)
+        {
+            ddlbrbn.DataSource = dtt;
+            ddlbrbn.DataValueField = "Status";
+            ddlbrbn.DataTextField = "Status";
+            ddlbrbn.DataBind();
+        }
+
+    }
+    protected void btnsendsms_Click(object sender, EventArgs e)
+    {
+        SMSHttpPostClient sms = new SMSHttpPostClient();
+        try
+        {
+            //  sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", "9470880581", txtsmsbrbnsecond.Text.Trim() , "35fc8f80-e0bc-469e-9a93-646d7d453552");
+            DataTable dtsms = cls.GetDataTable("select distinct Mobileno from SendSMS2nd_BRBN where Status='" + ddlbrbn.SelectedValue + "' ");
+            if (dtsms.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtsms.Rows)
+                {
+                    sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", dr["Mobileno"].ToString(), txtsmsbrbnsecond.Text.Trim(), "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                }
+                cn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter("update SendSMS2nd_BRBN  set upDATEfLAg=1 where status='" + ddlbrbn.SelectedValue + "'", cn);
+                da.SelectCommand.ExecuteNonQuery();
+                cn.Close();
+                ddlfillStatusbrbn();
+                ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND..........." + dtsms.Rows.Count.ToString() + "..');", true);
+            }
+
+        }
+        catch (Exception ex)
+        { }
+        finally { }
+    }
+
+
+
+    //NEW
+
+    //PATNA AND MAGADH DIVISION
+    protected void ddlfilldistricts()
+    {
+        DataTable dt = cls.GetDataTable("select distcode, distname from districts where distcode in (229,230,231,232,233,234,235,236,237,239,240) order by distname");
+        ddlpatmagdist.DataSource = dt;
+        ddlpatmagdist.DataTextField = "distname";
+        ddlpatmagdist.DataValueField = "distcode";
+        ddlpatmagdist.DataBind();
+        ddlpatmagdist.Items.Insert(0, new ListItem("--Select --", "0"));
+    }
+
+    protected void fillBlockspatmag()
+    {
+        //DropDownList ddlDist = (e.Row.FindControl("ddldist") as DropDownList);
+        DataTable dt = cls.GetDataTable("select bLOCKnAME, BlockCode from blocks where distcode='" + ddlpatmagdist.SelectedValue + "' order by bLOCKnAME");
+        ddlpatmagblk.DataSource = dt;
+        ddlpatmagblk.DataTextField = "bLOCKnAME";
+        ddlpatmagblk.DataValueField = "BlockCode";
+        ddlpatmagblk.DataBind();
+        ddlpatmagblk.Items.Insert(0, new ListItem("--Select --", "0"));
+
+    }
+    protected void Button9_Click(object sender, EventArgs e)
+    {
+        DataTable dt = cls.GetDataTable("select count(*) cnt from  [dbo].[Registration]  where BLOCKCODE='" + ddlpatmagblk.SelectedValue + "'");
+        if (dt.Rows.Count > 0)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS REMAINING..........." + dt.Rows[0]["cnt"].ToString() + "..');", true);
+        }
+    }
+
+    protected void Button10_Click(object sender, EventArgs e)
+    {
+        SMSHttpPostClient sms = new SMSHttpPostClient();
+
+        try
+        {
+            DataTable dtsms = cls.GetDataTable("select MobileNumber from  [dbo].[Registration]  where BLOCKCODE='" + ddlpatmagblk.SelectedValue + "'");
+            if (dtsms.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtsms.Rows)
+                {
+                    sms.sendUnicodeSMS("BIHAREDISTRICT-agro", "dbt@1256#", "BRGOVT", dr["MobileNumber"].ToString(), "प्रिय किसान भाईयों, धान की कटनी मशीन से करने के बाद पुवाल/फसल अवशेष को खेत में नहीं जलाना चाहिए,इससे मिट्टी और जलवायु को नुकसान होता है | फसल अवशेषजलाने वाले किसानो को कृषि विभाग की योजनाओ से वंचित रखा जायेगा| फसल अवशेष प्रबंधन के लिए किसान https://www.youtube.com/watch?v=Gcpn_33tG-A लिंक को देखे| कृषि विभाग बिहार सरकार| ", "35fc8f80-e0bc-469e-9a93-646d7d453552");
+                }
+                ScriptManager.RegisterStartupScript(this, GetType(), "Msg", "alert('Total SMS SEND..........." + dtsms.Rows.Count.ToString() + "..');", true);
+            }
+        }
+        catch (Exception ex)
+        { }
+        finally { }
+    }
+
+    protected void ddlpatmagdist_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        fillBlockspatmag();
+    }
+
+
+
+
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx?wsdl" docRef="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx" xmlns:q1="http://dbtagriculture.bihar.gov.in/" binding="q1:AgricultureWebserviceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://dbtagriculture.bihar.gov.in/agriculturewebservice.asmx" xmlns:q2="http://dbtagriculture.bihar.gov.in/" binding="q2:AgricultureWebserviceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,41 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePublic.master" AutoEventWireup="true" CodeBehind="CheckStatusPMKISan.aspx.cs" Inherits="AgricultureDept.CheckStatusPMKISan" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <table width="100%">
+         
+        <tr>
+            <td style="font-family: Verdana; font-weight: bold; font-size: 19px; background-color: #77A847; color: #FFFFFF;" align="center" class="auto-style1" colspan="2">Check Application Status for PM-KISAN</td>
+        </tr>
+         
+    </table>
+
+    <asp:Panel ID="Panel1" runat="server" GroupingText="" Font-Names="Verdana" Font-Size="12px">
+       
+         <div class="panel panel-success">
+            <div class="panel-heading" style="font-size:14px; font-family:Verdana; font-weight:bold;" >Enter and Search Record(s):</div>
+            <div class="panel-body" style="font-size: 12px;">   
+       <table width="100%">
+            <tr>
+                <td align="right" >Enter Application Number :</td>
+                <td align="left"><asp:TextBox ID="TextBox1" runat="server" MaxLength="20"></asp:TextBox> &nbsp;&nbsp; <asp:Button ID="Button1" runat="server" Text="Search" Font-Bold="True" Font-Size="12px" Font-Names="Lucida Handwriting" Width="80px" OnClick="Button1_Click" /></td>
+            </tr>
+        </table>
+                </div> </div> 
+    </asp:Panel>
+    
+    <asp:Panel ID="pnlrecords" GroupingText="" Visible="false" runat="server" Font-Names="Verdana" Font-Size="12px">
+          <div class="panel panel-success">
+            <div class="panel-heading" style="font-size:14px; font-family:Verdana; font-weight:bold;" >Searched Records</div>
+            <div class="panel-body" style="font-size: 12px;">   
+        <table width="100%">
+            <tr>
+                <td><asp:Label ID="lbl" runat="server" Font-Bold="True" Font-Size="13px" ForeColor="#006600" ></asp:Label></td>
+            
+                  <td>&nbsp;</td>
+            </tr>
+           
+            
+        </table>
+                </div> </div> 
+    </asp:Panel>
+</asp:Content>

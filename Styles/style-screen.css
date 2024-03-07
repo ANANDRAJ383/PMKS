@@ -1,0 +1,47 @@
+body
+{
+    background-color: #666666;
+    color: #CCCCCC;
+    border-bottom: 2px solid #CCCCCC;
+}
+
+#header
+{
+    background-color: #336699;
+    color: #FFFFFF;
+}
+
+
+#content
+{
+    float: left;
+    width: 610px;
+}
+
+
+#content a
+{
+    color: #333333;
+    text-decoration: underline;
+    background-color: #CCCCCC;
+    padding: 4px 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#content a:hover
+{
+    color: #CCCCCC;
+    text-decoration: underline;
+    background-color: #333333;
+    padding: 4px 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#footer
+{
+    background-color: #336699;
+    color: #FFFFFF;
+    border-top: 2px solid #CCCCCC;
+}

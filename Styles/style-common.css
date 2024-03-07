@@ -1,0 +1,52 @@
+body
+{
+    margin: 0px;
+    font-family: "Trebuchet MS" , Arial, "Bitstream Vera Sans" , sans-serif;
+    font-size: 10pt;
+    line-height: 16pt;
+}
+
+#mainDiv
+{
+    float: left;
+    width: 800px;
+    padding: 0px;
+}
+
+#header
+{
+    float: left;
+    width: 750px;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20pt;
+    line-height: 24pt;
+    letter-spacing: -1px;
+    padding: 24px;
+}
+
+#leftMenu
+{
+    float: left;
+    width: 150px;
+    background-color: #99CCFF;
+    height: 400px;
+    padding: 8px;
+}
+
+#content
+{
+    padding: 8px;
+}
+
+#footer
+{
+    float: left;
+    width: 750px;
+    text-align: center;
+    background-color: #336699;
+    color: #FFFFFF;
+    font-size: 10pt;
+    padding: 24px;
+    border-top: 2px solid #CCCCCC;
+}

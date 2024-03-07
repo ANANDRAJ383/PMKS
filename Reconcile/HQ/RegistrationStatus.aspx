@@ -1,0 +1,137 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="ADMMasterPage.master" AutoEventWireup="true" CodeFile="RegistrationStatus.aspx.cs" Inherits="HQ_RegistrationStatus" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <div style="margin:10px 30px 10px 30px;">
+
+         <div class="row">
+                        <!-- Revenue breakdown chart example-->
+                        
+                            <div class="card card-raised h-100">
+                                <div class="card-header bg-transparent px-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="me-4">
+                                            <h2 class="card-title mb-0"><b>Check Statu</b></h2>
+                                        </div>                                       
+                                    </div>
+                                </div>
+                                                  
+	                     		<div class="row mb-3 p-2">			
+			<div class="col-lg-6">
+			<div class="form-group">
+                <label for="login-email-1" >Search By:</label>
+							<asp:DropDownList ID="ddlSearchBy" runat="server" class="form-control" OnSelectedIndexChanged="ddlSearchBy_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Value="0" Selected="True" >--Select--</asp:ListItem>
+                    <asp:ListItem Value="R">Registration Id</asp:ListItem>
+                    <asp:ListItem Value="A">Aadhaar No</asp:ListItem>
+                    <asp:ListItem Value="M">Mobile No</asp:ListItem>
+                </asp:DropDownList>
+				<asp:Label ID="lblUser" runat="server" Text="Enter Registration Id" ></asp:Label>							
+								<asp:TextBox ID="txtUserId" runat="server" class="form-control"  AutoCompleteType="Disabled"></asp:TextBox>
+			</div>
+            </div>
+		<div class="col-lg-6">
+				<div class="form-group">
+					<br />		
+                    <asp:Button ID="btnView" class="btn btn-primary b-btn" runat="server" Text="View" OnClick="btnView_Click" ></asp:Button>
+				<div><asp:Label ID="lblMsg" runat="server" ForeColor="Red" Font-Size="17px"></asp:Label></div>
+		</div>
+	
+</div>
+                                     
+                   <div id="divData" runat="server" visible="false" style="margin:10px">
+                       <table class="table-bordered  table table-striped ">
+
+                           <tr>
+
+                               <td>
+                                   <center>
+                                       <asp:Image ID="imgbiharlogo" runat="server" ImageUrl="~/Images/biharlogo.png" />
+                                       <br />
+                                       <br />
+                                       <asp:Label ID="lbldisplay" runat="server" Text="कृषि विभाग, बिहार सरकार" Font-Size="XX-Large" Font-Bold="True" Font-Underline="False"></asp:Label>
+                                   </center>
+                               </td>
+                           </tr>
+                       </table>
+
+                         <table class="table-bordered table table-striped " style="width: 100%;"> 
+        <tr>
+            <td><span>पंजीकरण  | Registration Id :-</span></td>
+            <td style="color: #FF0000; font-size: large" colspan="3">
+                <asp:Label ID="lblRegistrationId" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+        </tr>
+        <tr>
+            <td><span>नाम | Name :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+            <td><span>पिता/पति का नाम | Father/Husband Name :-</span></td>
+            <td style="color: #FF0000; font-size: large"><asp:Label ID="lblFName" Font-Italic="True" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+        </tr>
+       <tr>
+            <td><span>मोबाइल नंबर | Mobile Number :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblMobile" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+            <td><span>लिंग | Gender :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblGender" Font-Italic="True" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+        </tr>
+        <tr>
+            <td><span>जन्म की तारीख | Date of birth :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblDOB" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+            <td><span>किसान प्रकार | Farmer type :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblFarmerType" Font-Italic="True" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+        </tr>
+        <tr>
+            <td><span>आधार संख्या | Aadhaar :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblAadhaar" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+            <td><span>जाति श्रेणी | Cast Category:-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblCast" Font-Italic="True" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+        </tr>
+        <tr>
+            <td><span>जिला | District :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblDist" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+            <td><span>प्रखंड |Block:-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblBlock" Font-Italic="True" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+        </tr>
+         <tr>
+            <td><span>पंचायत |Panchayat :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblPanchayat" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+            <td><span>गाँव |Village:-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblVillage" Font-Italic="True" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+        </tr>
+        <tr>
+            <td><span>आईएफएससी कोड |IFSC Code :-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblIFSC" runat="server" Font-Bold="True" Font-Italic="True"></asp:Label></td>
+            <td><span>खाता संख्या |Account No:-</span></td>
+            <td style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblAC" Font-Italic="True" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+        </tr>
+        <tr>
+            <td>स्थिति | Status :-</td>
+            <td colspan="3" style="color: #FF0000; font-size: large">
+                <asp:Label ID="lblStatus" Font-Italic="True" runat="server" Font-Bold="True"></asp:Label><br />
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><center><asp:Label ID="lblDate" Font-Italic="True" runat="server" Font-Bold="True" Font-Size="18pt"></asp:Label></center></td>
+        </tr>
+    </table>
+                   </div>                  </div><!-- end card-->  
+                                       
+                                    </div>   <!-- end main row-->                           
+                            
+                             </div> <!-- end main div-->
+ 
+</asp:Content>
+

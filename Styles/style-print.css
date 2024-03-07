@@ -1,0 +1,30 @@
+.dontprint
+{
+    display: none;
+}
+
+#header
+{
+    background-color: #FFFFFF;
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+#leftMenu
+{
+    display: none;
+}
+
+#content a
+{
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+#footer
+{
+    background-color: #FFFFFF;
+    color: #000000;
+    border-top: 2px solid #000000;
+}

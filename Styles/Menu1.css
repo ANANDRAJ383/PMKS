@@ -1,0 +1,84 @@
+﻿
+.menucontainer {
+	padding-bottom:45px;
+	background: #fff url('../images/banner-sh.png') no-repeat bottom;
+}
+
+
+.MenuDefaultMenuItemStyle
+{
+    border: 0px dotted #f1f0eb;
+    background-color: #030;
+    color: #004875;
+    padding: 2px 12px;
+}
+.MenuDefaultMenuItemStyle a:hover
+{
+    text-decoration: none;
+    color: #004875;
+}
+.MenuDefaultSelectedStyle
+{
+    background-color: #3C5778;
+    color: #333;
+    padding: 2px 12px;
+}
+
+.MenuDefaultHoverStyle
+{
+   
+    color: #000;
+    padding: 2px 12px;
+}
+
+.MenuDefaultHoverStyle:hover
+{
+    text-decoration: none;
+    color: #004875;
+}
+.MenuVerticalMenuItemStyle
+{
+    background-color: #FFFFFF;
+    border: 1px solid #D5DCE1;
+    color: #234875;
+    height: 20px;
+    padding: 2px 12px;
+}
+
+.MenuVerticalSelectedStyle
+{
+    background-color: #003366;
+    border: 1px solid #D5DCE1;
+    color: #004875;
+    height: 20px;
+    padding: 2px 12px;
+}
+
+.MenuVerticalHoverStyle
+{
+    background-color: #CC99FF;
+    border: 1px solid #000000;
+    color: #234875;
+    height: 20px;
+    padding: 2px 12px;
+}
+
+
+a.MenuDefaultMenuItemStyle:link
+{
+    text-decoration: none;
+    color: #3ff;
+}
+
+a.MenuDefaultMenuItemStyle:visited
+{
+    text-decoration: none;
+    color: #3ff;
+}
+
+a.MenuDefaultMenuItemStyle:hover
+{
+    text-decoration: none;
+    color: #333;
+}
+

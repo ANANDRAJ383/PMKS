@@ -1,0 +1,338 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="COMasterPage.master.cs" Inherits="CO_COMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <title>PM-Kisan | Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/base-responsive.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <link rel="stylesheet" href="../css/slicknav.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/entryform.css" />
+  
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .sub-sub-bgcolor {
+    background-color: #99f0b0!important;
+}
+        .b-leftmenu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .b-leftmenu ul li {
+                /* Sub Menu */
+            }
+
+                .b-leftmenu ul li a {
+                    display: block;
+                    background: #ebebeb;
+                    padding: 10px 15px;
+                    color: #333;
+                    text-decoration: none;
+                    -webkit-transition: 0.2s linear;
+                    -moz-transition: 0.2s linear;
+                    -ms-transition: 0.2s linear;
+                    -o-transition: 0.2s linear;
+                    transition: 0.2s linear;
+                }
+
+                    .b-leftmenu ul li a:hover {
+                        background: #f8f8f8;
+                        color: #515151;
+                    }
+
+                    .b-leftmenu ul li a .fa {
+                        width: 16px;
+                        text-align: center;
+                        margin-right: 5px;
+                        float: right;
+                    }
+
+            .b-leftmenu ul ul {
+                background-color: #ebebeb;
+            }
+
+        .b-leftmenu .sub-menu ul li a {
+            background: #f8f8f8;
+            border-left: 4px solid transparent;
+            padding: 10px 25px;
+        }
+
+        .b-leftmenu .sub-sub-menu ul li a {
+            padding: 10px 20px 10px 40px;
+        }
+
+        .b-leftmenu a.b-newpage:hover {
+            background: #ebebeb;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+
+     <script language="javascript" type="text/javascript">
+         //function to disable browser back button
+         function DisableBackButton() {
+             window.history.forward();
+         }
+         setTimeout("DisableBackButton()", 0);
+         window.onunload = function () { null };
+     </script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+          <div class="d-flex" id="wrapper">
+
+            <!-- Sidebar -->
+            <div class="dashboard-bgcolor border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading text-center b-db-color" style="font-size: 24px">
+                    <span class="fas fa-tachometer-alt"></span>&nbsp;<span class="text-uppercase">CO</span>
+                </div>
+                <div class="list-group list-group-flush b-leftmenu">
+
+                    <ul id="sortable-menu">
+                        <li><a href="Default.aspx" class="dashboard-bgcolor b-db-color border-bottom b-newpage">Home</a></li>
+
+                        <li class='sub-menu'><a href='javascript:void(0)' class="dashboard-bgcolor border-bottom b-db-color b-newpage">Verification<div class='fa fa-caret-down right'></div>
+                        </a>
+                            <ul>
+                                <li><a class="b-newpage" href="Verification.aspx">V1. Verification (New Application)</a></li>
+                                <li><a class="b-newpage" href="Verification.aspx">V2. Verification (Reconsider)</a></li>
+                                <li><a class="b-newpage" href="Verification.aspx">V3. Verification (Re-Reconsider)</a></li>
+				                 <li><a class="b-newpage" href="MutationDateVerification.aspx">V4. Land Seeding "No" Data- New </a></li>
+
+                                <li class='sub-menu'><a  href='javascript:void(0)' class="sub-sub-bgcolor border-bottom b-db-color b-newpage">V5. Land Seeding "No" Data-Return from GOI <div class='fa fa-caret-down right'></div></a>
+                                    <ul>
+                                <li><a href="MutationDateEntryRural.aspx" class="b-newpage">V5.1. Enter Mutation Date for Rural Land</a></li>
+                                <li><a href="MutationDateEntryUrban.aspx" class="b-newpage">V5.2. Enter Mutation Date for Urban Land</a></li>
+                               <li><a class="b-newpage" href="UpdateVillage.aspx">V6. Update Village Name (Data Return from GoI)</a></li>
+                            </ul>
+                                </li>
+  <!-- <li><a class="b-newpage" href="KhataKhesraZeroEntry.aspx">V6. Entry (Whose Khata Khesra Zero Not Available)</a></li>-->
+                            </ul>
+                        </li>
+                     
+                       <%-- <li class='sub-menu'><a href='javascript:void(0)' class="dashboard-bgcolor border-bottom b-db-color b-newpage">Report<div class='fa fa-caret-down right'></div>
+                        </a>
+                            <ul>
+                                <li><a href="#" class="b-newpage">R1. Verifid Farmer List</a></li>
+                                <li><a href="#" class="b-newpage">R2. Not Verified Farmer List</a></li>
+                               
+                            </ul>
+                        </li>--%>
+                     <%--  <li class='sub-menu'><a href='javascript:void(0)' class="dashboard-bgcolor border-bottom b-db-color b-newpage">Land Seeding "No" Data-Return from GOI <div class='fa fa-caret-down right'></div>
+                        </a>
+                            <ul>
+                                <li><a href="MutationDateEntryRural.aspx" class="b-newpage">R1. Enter Mutation Date for Rural Land</a></li>
+                                <li><a href="MutationDateEntryUrban.aspx" class="b-newpage">R2. Enter Mutation Date for Urban Land</a></li>
+                               
+                            </ul>
+                        </li>--%>
+<li class='sub-menu'><a href='javascript:void(0)' class="dashboard-bgcolor border-bottom b-db-color b-newpage">Check Status (PM Kisan)<div class='fa fa-caret-down right'></div>
+                        </a>
+                            <ul>
+                                <li><a href="CheckApplicationStatus.aspx" class="b-newpage">C1. Check Application Status (PM Kisan)</a></li>
+                            </ul>
+                        </li>
+			 <li class='sub-menu'><a href='javascript:void(0)' class="dashboard-bgcolor border-bottom b-db-color b-newpage">Download (PMKISAN)<div class='fa fa-caret-down right'></div>
+                        </a>
+                            <ul>
+                                <li><a href="DownloadVerifiedData.aspx" class="b-newpage">D1 . Accepted/Rejected Data</a></li>
+                               
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+
+                <nav class="navbar navbar-expand-lg navbar-light dashboard-bgcolor border-bottom">
+                    <button class="btn b-db-color" id="menu-toggle">
+                        <span style="display: none;">Menu</span>
+                        <span class="fas fa-bars" style="font-size: 1.4rem"></span>
+                    </button>
+
+                    <button class="navbar-toggler b-dropmenubtn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="far fa-caret-square-down" style="font-size: 30px; color: #FFF"></span>
+                    </button>
+<div style="margin-left:20px;" align="center">
+                    <asp:Label ID="lblData" runat="server" Text="Label" Font-Bold="True" Font-Size="20pt" ForeColor="Black"></asp:Label>
+			 <asp:Label ID="lblDate" runat="server"  Font-Bold="True" Font-Size="20pt" ForeColor="Black"></asp:Label>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                           
+                           
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle b-db-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <asp:Label ID="lblName" runat="server" ></asp:Label>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right text-center b-dropmenu-db" aria-labelledby="navbarDropdown">
+                                    <%--<a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>--%>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#signout-modal"><asp:Button runat="server" ID="Button1" Text ="Sign Out" OnClick="lblLogout_Click" ></asp:Button></a>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+             
+                <!-- /#page-content-wrapper -->
+
+
+
+                <div class="container-fluid">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                </asp:ContentPlaceHolder>
+                    </div>
+            </div>
+
+        </div>
+        <%--     <div class="row my-5 mx-sm-5">
+        	<div class="col-md-6">
+        		<h4 class="text-center">Send to Delhi Data Graph</h4>
+        		<canvas id="basicLineChart2" width="400" height="400"></canvas>
+        	</div>
+        	<div class="col-md-6">
+        		<h4 class="text-center">Payment (in percent)</h4>
+        		<canvas id="doughnutChart2" width="400" height="400"></canvas>
+        	</div>
+        </div>
+        --%>
+
+        <!-- /#page-content-wrapper -->
+
+
+        <!-- /#wrapper -->
+
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+               <%-- <script src="../js/jquery.slicknav.min.js"></script>--%>
+         <%--<script src="../js/dashboard.js"></script>--%>
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+                $('#backtotop').click(function () {
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+            });
+        </script>
+
+
+        <script>
+            $('.sub-menu ul').hide();
+            $('.sub-sub-menu ul').hide();
+            $(".sub-menu a").click(function () {
+                $(this).parent(".sub-menu").children("ul").slideToggle("100");
+                $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+            });
+
+            $(".sub-sub-menu a").click(function () {
+                $(this).parent(".sub-sub-menu").children("ul").slideToggle("100");
+                $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+            });
+        </script>
+
+
+
+        <!-- Signup Modal -->
+        <div class="modal fade" id="signout-modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header text-center d-block p-5 border-bottom-0">
+                        <h3 class="modal-title">Sign Out?</h3>
+                        <button type="button" class="close position-absolute" style="right: 15px; top: 8px;" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p class="text-center">Are you sure you want to Sign Out?</p>
+                        <div class="text-center py-4">
+                            <%--<form action="LoginForm.aspx">--%>
+                                <asp:Button ID="submit" runat="server" class="btn btn-primary b-btn mx-1" Text="Sign Out" OnClick="submit_Click"></asp:Button>
+                                <button class="btn btn-secondary mx-3" data-dismiss="modal">Cancel</button>
+                            <%--</form>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="../vendor/jquery-ui/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#sortable-menu").sortable();
+                $("#sortable-menu").disableSelection();
+
+                $("#sortable-cards").sortable();
+                $("#sortable-cards").disableSelection();
+            });
+        </script>
+
+
+        <script>
+            $(function () {
+                $("#one-item-row").on("click", function () {
+                    $(".b-customize").addClass("col-lg-12", 300);
+                    $(".b-customize").removeClass("col-lg-4", 300);
+                    $(".b-customize").removeClass("col-lg-6", 300);
+
+                });
+
+                $("#two-item-row").on("click", function () {
+                    $(".b-customize").addClass("col-lg-6", 300);
+                    $(".b-customize").removeClass("col-lg-4", 300);
+                    $(".b-customize").removeClass("col-lg-12", 300);
+
+                });
+
+                $("#three-item-row").on("click", function () {
+                    $(".b-customize").addClass("col-lg-4", 300);
+                    $(".b-customize").removeClass("col-lg-6", 300);
+                    $(".b-customize").removeClass("col-lg-12", 300);
+
+                });
+
+            });
+        </script>
+    </form>
+</body>
+</html>

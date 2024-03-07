@@ -1,0 +1,275 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>DBT Admin Portal | Homepage</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/base-responsive.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <script src="js/popper.min.js"></script>
+</head>
+<body>
+	
+	<div style="display:none;">
+		<h1>Heading1</h1><h2>Heading2</h2>
+	</div>
+	
+	<!-- Accessibility -->
+	<div class="container d-flex clearfix" id="b-accessibility">
+		<div class="b-ministryname">
+			<div class="text-right d-inline-block font-weight-bold b-acc-goi pr-sm-2">
+				<span>Government of Bihar</span>
+			</div>
+			<div class="d-inline-block font-weight-bold b-acc-ministry pl-sm-2">
+				<span>DBT, Agriculture Department</span>
+			</div>
+		</div>
+		
+		
+		<div class="ml-auto d-flex b-acc-icons">
+			<div class="align-self-center">
+
+				<div class="d-inline-block h-100 px-3">
+					<img src="images/icons/ico-site-search.png" alt="site search icon" title="Site search" class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">
+
+					<div class="dropdown-menu p-0 border-0 b-search">
+						<label for="site-search" style="display:none;">Site search</label>
+				        <input type="text" class="form-control float-left b-site-search" id="site-search" placeholder="Search" style="width: 150px; border-radius: 0;">
+					    <div class="input-group-btn float-left">
+					      <button class="btn" type="submit" style="border-radius: 0; background: #505050; color: white; box-shadow: 0 0 0 0.2rem rgba(0,123,255,0);"> 
+					      	<span style="display:none;">Search</span>
+					        <span class="fas fa-search"></span>
+					      </button>
+					    </div>
+				    </div>
+				</div>
+
+				<div class="d-inline-block h-100 px-3 dropdown">
+					<img src="images/icons/ico-social.png" alt="social sites links" title="Social links" class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">
+
+					<div class="dropdown-menu b-social-dropdown" style="min-width: 50px; width: 50px">
+				        <a href="javascript:void(0)" class="dropdown-item"> <span style="display:none;">Facebook link</span><span class="fab fa-facebook-f"></span> </a>
+				        <a href="javascript:void(0);" class="dropdown-item"> <span style="display:none;">Twitter link</span><span class="fab fa-twitter"></span> </a>
+				        <a href="javascript:void(0)" class="dropdown-item"> <span style="display:none;">Youtube link</span><span class="fab fa-youtube"></span> </a>
+				    </div>
+				</div>
+				
+
+				<div class="d-inline-block h-100 px-3">
+					<a href="#b-homedb" class="align-self-center b-skiptomain" title="Skip to main content">
+						<img src="images/icons/ico-skip.png" alt="skip to main content icon">
+					</a>
+				</div>
+
+				<div class="d-inline-block h-100 px-3">
+					<img src="images/icons/ico-accessibility.png" alt="accessibility icon" title="Accessibility Dropdown" class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">
+
+					<div class="dropdown-menu b-accessibility-dropdown" style="min-width: 50px; width: 50px">
+				        <a href="javascript:void(0);" class="dropdown-item" title="Increase font size"> <span class="font-weight-bold"> A<sup>+</sup> </span> </a>
+				        <a href="javascript:void(0)" class="dropdown-item" title="Reset font size"> <span class="font-weight-bold"> A </span> </a>
+				        <a href="javascript:void(0);" class="dropdown-item" title="Decrease font size"> <span class="font-weight-bold"> A<sup>-</sup> </span> </a>
+				        <a href="javascript:void(0)" class="dropdown-item bg-dark" title="High contrast"> <span class="font-weight-bold text-white"> A </span> </a>
+				    </div>
+				</div>
+
+				<div class="d-inline-block h-100 px-3">
+					<a href="#" title="Sitemap">
+						<img src="images/icons/ico-sitemap.png" alt="sitemap icon">
+					</a>
+				</div>
+
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+
+	<!-- Header -->
+	<div class="container clearfix" id="b-header">
+		<div class="float-left d-flex h-100">
+			<img src="images/Seal_of_Bihar.png" class="align-self-center b-emblem-image" title="Bihar Emblem" alt="emblem of india logo" Width="80px">
+		</div>
+
+		<div class="float-left d-flex h-100">
+			<h2 class="align-self-center pl-3 b-appname"><span class="font-weight-bold">DIRECT BENEFIT TRANSFER (DBT)</span> <br><span class="b-appfullname"> DEPARTMENT OF AGRICULTURE, BIHAR </span></h2>
+		</div>
+	</div>
+
+	<style type="text/css">
+		.bar1, .bar2, .bar3 {
+		    width: 25px;
+		    height: 3px;
+		    background-color: #fff;
+		    margin: 5px 0;
+		    transition: 0.4s;
+		}
+
+		.change .bar1 {
+		  -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+		  transform: rotate(-45deg) translate(-5px, 5px);
+		}
+
+		.change .bar2 {opacity: 0;}
+
+		.change .bar3 {
+		  -webkit-transform: rotate(45deg) translate(-5px, -7px);
+		  transform: rotate(45deg) translate(-5px, -7px);
+		}
+	</style>
+
+
+	<!-- Global Navigation -->
+	<div class="globalnav-bg">
+		<div class="container">
+			<nav class="navbar navbar-expand-sm navbar-dark px-0">
+				<div class="d-flex w-100 b-nav-mobile">
+					<button class="navbar-toggler align-self-center b-btn-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="myFunction(this)">
+						<span style="display:none;">Menu</span>
+						<div>
+						  <div class="bar1"></div>
+						  <div class="bar2"></div>
+						  <div class="bar3"></div>
+						</div>
+					</button>
+					<!-- <button class="btn btn-outline-light align-self-center ml-auto b-btn-login" type="button" data-toggle="modal" data-target="#login-modal">
+						Log In
+					</button> --> 
+				</div>
+				
+				<div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav main-menu d-flex">
+						<li class="nav-item d-block"> <a href="LoginForm.aspx" class="nav-link active">Home</a> </li>
+						<li class="nav-item d-block"> <a href="#" class="nav-link">Schemes</a></li>
+						<li class="nav-item d-block"> <a href="http://fw.pmkisan.gov.in/" class="nav-link" target="_blank">PM Kisan Portal</a></li>
+						<li class="nav-item d-block"> <a href="https://dbtagriculture.bihar.gov.in/" class="nav-link" target="_blank">DBT Agriculture Portal</a></li>
+						<li class="nav-item d-block"> <a href="#" class="nav-link">Contact Us</a></li>
+						<li class="nav-item d-block"> <a href="Reconcile/Login.aspx" class="nav-link">PMKS</a></li>
+						<!-- <li class="nav-item d-block ml-auto b-loginbut" data-toggle="modal" data-target="#login-modal">
+							<a class="nav-link" href="javascript:void(0);">Log In</a>
+						</li> -->    
+					</ul>
+				</div>
+
+			</nav>
+		</div>
+	</div>
+
+	<script>
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+    </script>
+		
+    <form id="form1" runat="server">
+<asp:ScriptManager ID="uppl" runat="server"></asp:ScriptManager>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+		<!-- Dashboard -->
+		<br /><br /><br /><br /><br /><br />
+	<div class="mt-5" id="b-homedb" style="position: relative; top: -170px; margin-bottom: -110px;">
+		<div class="container">
+			<div class="row text-center">
+				<!-- <h2 class="col-md-12">Figures tell the story</h2> -->
+				<div class="col-lg-4 p-4">
+					<div class="bg-light py-4 b-dbcard"> 
+						<p><span class="fa fa-wheat" style="font-size:40px"></span></p>
+						<!-- <p> <img src="images/wheat.svg" width="40px"></span></p> -->
+						<h3 style="font-size: 16px;"><strong>Total Applied Farmers'</strong></h3>
+						<div class="text-left ">
+							<p class="px-5">Last year  <span class="float-right">1.10 Cr Farmers'</span></p>
+
+							<p class="px-5">Current year <span class="float-right">1.25 Cr Farmers'</span></p>
+						</div> 
+					</div> 
+				</div>
+
+				<div class="col-lg-4 p-4"> 
+					<div class="bg-light py-4 b-dbcard"> 
+						<p><span class="fas fa-vial" style="font-size:40px"></span></p>
+						<h3 style="font-size: 16px;"><strong>Total Beneficiary</strong></h3>
+						<div class="text-left ">
+							<p class="px-5">Last year  <span class="float-right">75.54 Lakh</span></p>
+
+							<p class="px-5">Current year <span class="float-right">85.50 Lakh</span></p>
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="col-lg-4 p-4">
+					<div class="bg-light py-4 b-dbcard"> 
+						<p><span class="fas fa-tractor" style="font-size:40px"></span></p>
+						<h3 style="font-size: 16px;"><strong>Agricultural land</strong></h3>
+						<div class="text-left ">
+							<p class="px-5">Last year  <span class="float-right">xxxx Cr acres</span></p>
+
+							<p class="px-5">Current year <span class="float-right">xxxx Cr acres</span></p>
+						</div> 
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+    </div>
+        <!----------- Footer ------------>
+	<div class="footer-bs">
+	    <footer class="container">
+	        <!--<div class="row">
+	        	<div class="row col-md-7 col-sm-12 footer-nav">
+	            	<p class="col-md-12">Quick Links —</p>
+	            	<div class="col-sm-6">
+	                    <ul class="list">
+	                        <li><a href="inner.html">Policies</a></li>
+	                        <li><a href="contactus.html">Contact Us</a></li>
+	                        <li><a href="inner.html">Guidelines</a></li>
+	                    </ul>
+	                </div>
+	                <div class="col-sm-6">
+	                    <ul class="list">
+	                    	<li data-toggle="modal" data-target="#feedback-modal"><a href="javascript:void(0)">Feedback</a></li>
+	                        <li><a href="inner.html">Help Centre</a></li>
+	                        <li><a href="javascript:void(0);">About Us</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        	<div class="col-md-3 col-sm-8 footer-social d-flex">
+        			<div class="d-inline-block align-self-center">
+	        			<p class="bg-light"><img src="images/NIC.png" alt="NIC logo"></p>
+	        			<p class="bg-light mb-0"><img src="images/digital-india.png" alt="digital india logo"></p>
+	        		</div>
+	            </div>
+	        	<div class="col-md-2 col-sm-4 footer-ns d-flex">
+	        			<a class="backtotop align-self-center d-flex text-center text-decoration-none text-white" title="Back to top" href="#b-accessibility">
+	        				<span style="display:none;">Back to top</span>
+		            		<span style="font-size: 24px;" class="fas fa-angle-up align-self-center mx-auto"></span>
+		            	</a>
+	            </div>
+	        </div>-->
+	        <div class="text-center mt-5 b-footer-credit" style="color: #000!important">
+	        	This website belongs to Department of <a class="font-weight-bold" href="https://dbtagriculture.bih.nic.in/">DBT Cell, Agriculture Department, Govt. of Bihar</a>, <a class="font-weight-bold" href="https://dbtagriculture.bih.nic.in/">Agriculture Department</a>, <a class="font-weight-bold" href="https://dbtagriculture.bih.nic.in/">Govt. of Bihar.</a>
+	        </div>
+	    </footer>
+	</div>
+
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegisterIIdata">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DistCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CircleCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HalkaCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaujaCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VolCurValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurPageNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterIIdataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterIIdataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegisterIIdataSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterIIdata" />
+  </wsdl:message>
+  <wsdl:message name="RegisterIIdataSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterIIdataResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterIIdataHttpGetIn">
+    <wsdl:part name="DistCode" type="s:string" />
+    <wsdl:part name="CircleCode" type="s:string" />
+    <wsdl:part name="HalkaCode" type="s:string" />
+    <wsdl:part name="MaujaCode" type="s:string" />
+    <wsdl:part name="VolCurValue" type="s:string" />
+    <wsdl:part name="CurPageNo" type="s:string" />
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterIIdataHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RegisterIIdataHttpPostIn">
+    <wsdl:part name="DistCode" type="s:string" />
+    <wsdl:part name="CircleCode" type="s:string" />
+    <wsdl:part name="HalkaCode" type="s:string" />
+    <wsdl:part name="MaujaCode" type="s:string" />
+    <wsdl:part name="VolCurValue" type="s:string" />
+    <wsdl:part name="CurPageNo" type="s:string" />
+    <wsdl:part name="User" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterIIdataHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="GetRegIIWebServiceSoap">
+    <wsdl:operation name="RegisterIIdata">
+      <wsdl:input message="tns:RegisterIIdataSoapIn" />
+      <wsdl:output message="tns:RegisterIIdataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GetRegIIWebServiceHttpGet">
+    <wsdl:operation name="RegisterIIdata">
+      <wsdl:input message="tns:RegisterIIdataHttpGetIn" />
+      <wsdl:output message="tns:RegisterIIdataHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GetRegIIWebServiceHttpPost">
+    <wsdl:operation name="RegisterIIdata">
+      <wsdl:input message="tns:RegisterIIdataHttpPostIn" />
+      <wsdl:output message="tns:RegisterIIdataHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetRegIIWebServiceSoap" type="tns:GetRegIIWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterIIdata">
+      <soap:operation soapAction="http://tempuri.org/RegisterIIdata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetRegIIWebServiceSoap12" type="tns:GetRegIIWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterIIdata">
+      <soap12:operation soapAction="http://tempuri.org/RegisterIIdata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetRegIIWebServiceHttpGet" type="tns:GetRegIIWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="RegisterIIdata">
+      <http:operation location="/RegisterIIdata" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetRegIIWebServiceHttpPost" type="tns:GetRegIIWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="RegisterIIdata">
+      <http:operation location="/RegisterIIdata" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetRegIIWebService">
+    <wsdl:port name="GetRegIIWebServiceSoap" binding="tns:GetRegIIWebServiceSoap">
+      <soap:address location="http://biharbhumi.bihar.gov.in/Biharbhumi/GetRegIIWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetRegIIWebServiceSoap12" binding="tns:GetRegIIWebServiceSoap12">
+      <soap12:address location="http://biharbhumi.bihar.gov.in/Biharbhumi/GetRegIIWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetRegIIWebServiceHttpGet" binding="tns:GetRegIIWebServiceHttpGet">
+      <http:address location="http://biharbhumi.bihar.gov.in/Biharbhumi/GetRegIIWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetRegIIWebServiceHttpPost" binding="tns:GetRegIIWebServiceHttpPost">
+      <http:address location="http://biharbhumi.bihar.gov.in/Biharbhumi/GetRegIIWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

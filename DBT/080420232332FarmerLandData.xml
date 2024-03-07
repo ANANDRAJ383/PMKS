@@ -1,0 +1,975 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219486156</Farmer_Registration_No>
+    <Farmer_FName>ANJANI KUMAR</Farmer_FName>
+    <Father_Name>YADUNATH KUMAR</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>65</LandOwnerShipID>
+    <LandID>643</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>09/06/2017</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.20</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219486156</Farmer_Registration_No>
+    <Farmer_FName>ANJANI KUMAR</Farmer_FName>
+    <Father_Name>YADUNATH KUMAR</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>125</LandOwnerShipID>
+    <LandID>640</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>09/06/2017</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.08</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219486156</Farmer_Registration_No>
+    <Farmer_FName>ANJANI KUMAR</Farmer_FName>
+    <Father_Name>YADUNATH KUMAR</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>115</LandOwnerShipID>
+    <LandID>634</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>09/06/2017</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.08</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219486156</Farmer_Registration_No>
+    <Farmer_FName>ANJANI KUMAR</Farmer_FName>
+    <Father_Name>YADUNATH KUMAR</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>120</LandOwnerShipID>
+    <LandID>633</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>09/06/2017</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.04</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219486156</Farmer_Registration_No>
+    <Farmer_FName>ANJANI KUMAR</Farmer_FName>
+    <Father_Name>YADUNATH KUMAR</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>40</LandOwnerShipID>
+    <LandID>115</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>09/06/2017</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.04</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR253995822</Farmer_Registration_No>
+    <Farmer_FName>RAJKISHOR SINGH</Farmer_FName>
+    <Father_Name>BIR BAHADUR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>210</LandOwnerShipID>
+    <LandID>1329</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/03/1985</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.08</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR253995822</Farmer_Registration_No>
+    <Farmer_FName>RAJKISHOR SINGH</Farmer_FName>
+    <Father_Name>BIR BAHADUR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>223</LandOwnerShipID>
+    <LandID>1340</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/03/1985</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.03</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR253995822</Farmer_Registration_No>
+    <Farmer_FName>RAJKISHOR SINGH</Farmer_FName>
+    <Father_Name>BIR BAHADUR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>112</LandOwnerShipID>
+    <LandID>668</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/03/1985</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.36</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR253995822</Farmer_Registration_No>
+    <Farmer_FName>RAJKISHOR SINGH</Farmer_FName>
+    <Father_Name>BIR BAHADUR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>188</LandOwnerShipID>
+    <LandID>1279</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/03/1985</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.13</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR268814375</Farmer_Registration_No>
+    <Farmer_FName>ASHOK THAKUR</Farmer_FName>
+    <Father_Name>RADHA RAMAN THAKUR</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>49</LandOwnerShipID>
+    <LandID>1087</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>195</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1717</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1717</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>05/11/2014</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.86</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219622227</Farmer_Registration_No>
+    <Farmer_FName>RAJESH KUMAR SINGH</Farmer_FName>
+    <Father_Name>SHIV SHANKAR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>60</LandOwnerShipID>
+    <LandID>824</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>195</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1716</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1716</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>13/02/2002</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.11</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219622227</Farmer_Registration_No>
+    <Farmer_FName>RAJESH KUMAR SINGH</Farmer_FName>
+    <Father_Name>SHIV SHANKAR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>60</LandOwnerShipID>
+    <LandID>616</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>195</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1716</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1716</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>13/02/2002</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.11</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215176256</Farmer_Registration_No>
+    <Farmer_FName>RAJKISHOR PRASAD</Farmer_FName>
+    <Father_Name>SINHASAN PRASAD</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>108</LandOwnerShipID>
+    <LandID>182</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>211</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1936</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1936</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>02/02/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.58</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215176256</Farmer_Registration_No>
+    <Farmer_FName>RAJKISHOR PRASAD</Farmer_FName>
+    <Father_Name>SINHASAN PRASAD</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>72</LandOwnerShipID>
+    <LandID>493</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>211</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1936</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1936</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>02/02/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.45</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215243006</Farmer_Registration_No>
+    <Farmer_FName>RAMA SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESHWARNARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>66</LandOwnerShipID>
+    <LandID>517</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/02/2006</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.14</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215243006</Farmer_Registration_No>
+    <Farmer_FName>RAMA SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESHWARNARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>8</LandOwnerShipID>
+    <LandID>752</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/02/2006</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.30</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215243006</Farmer_Registration_No>
+    <Farmer_FName>RAMA SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESHWARNARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>8</LandOwnerShipID>
+    <LandID>746</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/02/2006</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.10</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215243006</Farmer_Registration_No>
+    <Farmer_FName>RAMA SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESHWARNARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>113</LandOwnerShipID>
+    <LandID>518</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/02/2006</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.21</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215243006</Farmer_Registration_No>
+    <Farmer_FName>RAMA SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESHWARNARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>188</LandOwnerShipID>
+    <LandID>1352</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/02/2006</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.07</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215243006</Farmer_Registration_No>
+    <Farmer_FName>RAMA SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESHWARNARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>80</LandOwnerShipID>
+    <LandID>530</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/02/2006</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.07</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215243006</Farmer_Registration_No>
+    <Farmer_FName>RAMA SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESHWARNARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>83</LandOwnerShipID>
+    <LandID>531</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/02/2006</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.09</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219711117</Farmer_Registration_No>
+    <Farmer_FName>VINODKUMAR SINGH</Farmer_FName>
+    <Father_Name>RAGHUVANSH SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>78</LandOwnerShipID>
+    <LandID>1248</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/06/2014</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.20</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219711117</Farmer_Registration_No>
+    <Farmer_FName>VINODKUMAR SINGH</Farmer_FName>
+    <Father_Name>RAGHUVANSH SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>78</LandOwnerShipID>
+    <LandID>1258</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/06/2014</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.20</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219711117</Farmer_Registration_No>
+    <Farmer_FName>VINODKUMAR SINGH</Farmer_FName>
+    <Father_Name>RAGHUVANSH SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>95</LandOwnerShipID>
+    <LandID>1377</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/06/2014</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.20</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219711117</Farmer_Registration_No>
+    <Farmer_FName>VINODKUMAR SINGH</Farmer_FName>
+    <Father_Name>RAGHUVANSH SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>95</LandOwnerShipID>
+    <LandID>1378</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/06/2014</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.20</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR163025017</Farmer_Registration_No>
+    <Farmer_FName>MD JAMILU RAHMAN</Farmer_FName>
+    <Father_Name>MD SHERAJUL HAQUE</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>188</LandOwnerShipID>
+    <LandID>998</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/02/2013</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.24</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR163025017</Farmer_Registration_No>
+    <Farmer_FName>MD JAMILU RAHMAN</Farmer_FName>
+    <Father_Name>MD SHERAJUL HAQUE</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>68</LandOwnerShipID>
+    <LandID>698</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/02/2013</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.36</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR163025017</Farmer_Registration_No>
+    <Farmer_FName>MD JAMILU RAHMAN</Farmer_FName>
+    <Father_Name>MD SHERAJUL HAQUE</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>10</LandOwnerShipID>
+    <LandID>558</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/02/2013</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.32</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR163025017</Farmer_Registration_No>
+    <Farmer_FName>MD JAMILU RAHMAN</Farmer_FName>
+    <Father_Name>MD SHERAJUL HAQUE</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>11</LandOwnerShipID>
+    <LandID>172</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>18/02/2013</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.16</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215270631</Farmer_Registration_No>
+    <Farmer_FName>SANJIT KUMAR SAH</Farmer_FName>
+    <Father_Name>DUKHAN SAH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>630</LandOwnerShipID>
+    <LandID>836</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>19/01/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.40</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215270631</Farmer_Registration_No>
+    <Farmer_FName>SANJIT KUMAR SAH</Farmer_FName>
+    <Father_Name>DUKHAN SAH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>7</LandOwnerShipID>
+    <LandID>795</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>19/01/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.40</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215270631</Farmer_Registration_No>
+    <Farmer_FName>SANJIT KUMAR SAH</Farmer_FName>
+    <Father_Name>DUKHAN SAH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>121</LandOwnerShipID>
+    <LandID>975</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>19/01/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.40</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215270631</Farmer_Registration_No>
+    <Farmer_FName>SANJIT KUMAR SAH</Farmer_FName>
+    <Father_Name>DUKHAN SAH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>131</LandOwnerShipID>
+    <LandID>535</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>19/01/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.14</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215429815</Farmer_Registration_No>
+    <Farmer_FName>MANJEET KUMAR SAH</Farmer_FName>
+    <Father_Name>DUKHAN SAH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>5</LandOwnerShipID>
+    <LandID>779</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>22/10/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.32</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215429815</Farmer_Registration_No>
+    <Farmer_FName>MANJEET KUMAR SAH</Farmer_FName>
+    <Father_Name>DUKHAN SAH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>2</LandOwnerShipID>
+    <LandID>850</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>22/10/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.22</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215244868</Farmer_Registration_No>
+    <Farmer_FName>RAVI SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESAWR NARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>76</LandOwnerShipID>
+    <LandID>525</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>25/03/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.34</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215244868</Farmer_Registration_No>
+    <Farmer_FName>RAVI SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESAWR NARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>134</LandOwnerShipID>
+    <LandID>492</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>25/03/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.08</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215244868</Farmer_Registration_No>
+    <Farmer_FName>RAVI SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESAWR NARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>8</LandOwnerShipID>
+    <LandID>752</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>25/03/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.10</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215244868</Farmer_Registration_No>
+    <Farmer_FName>RAVI SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESAWR NARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>188</LandOwnerShipID>
+    <LandID>1269</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>25/03/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.06</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR215244868</Farmer_Registration_No>
+    <Farmer_FName>RAVI SHANKAR SINGH</Farmer_FName>
+    <Father_Name>KAMESAWR NARAYAN SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>85</LandOwnerShipID>
+    <LandID>527</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>25/03/2015</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.16</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR268799137</Farmer_Registration_No>
+    <Farmer_FName>DILIP KUMAR MANDAL</Farmer_FName>
+    <Father_Name>DEVNARAYAN MANDAL</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>497</LandOwnerShipID>
+    <LandID>297</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>207</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1869</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1869</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>17/01/1970</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.34</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR288790837</Farmer_Registration_No>
+    <Farmer_FName>HRIDAYA DEVI</Farmer_FName>
+    <Father_Name>BHUPNARAYAN PANDEY</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>0</LandOwnerShipID>
+    <LandID>0</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>211</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1936</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1936</LandBlockLGDCode>
+    <LandVillageLGDCode>216747</LandVillageLGDCode>
+    <LandVillageName>Sita Pur</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>10/02/2001</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.40</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219611994</Farmer_Registration_No>
+    <Farmer_FName>PRAMOD SINGH</Farmer_FName>
+    <Father_Name>RAM BAHADUR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>31</LandOwnerShipID>
+    <LandID>274</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>195</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1716</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1716</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/04/2010</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.45</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219611994</Farmer_Registration_No>
+    <Farmer_FName>PRAMOD SINGH</Farmer_FName>
+    <Father_Name>RAM BAHADUR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>110</LandOwnerShipID>
+    <LandID>359</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>195</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1716</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1716</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/04/2010</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.57</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR219611994</Farmer_Registration_No>
+    <Farmer_FName>PRAMOD SINGH</Farmer_FName>
+    <Father_Name>RAM BAHADUR SINGH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>78</LandOwnerShipID>
+    <LandID>379</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>195</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1716</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1716</LandBlockLGDCode>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>07/04/2010</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.26</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR247068087</Farmer_Registration_No>
+    <Farmer_FName>AVADHESH KUMAR YADAV</Farmer_FName>
+    <Father_Name>SUKDEV YADAV</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>155</LandOwnerShipID>
+    <LandID>342</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>201</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1810</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1810</LandBlockLGDCode>
+    <LandVillageLGDCode>35891</LandVillageLGDCode>
+    <LandVillageName>Ward No.7</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>06/06/2018</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.14</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR267525634</Farmer_Registration_No>
+    <Farmer_FName>VIMAL DEVI</Farmer_FName>
+    <Father_Name>KAUSHAL KISHOR SINH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>51</LandOwnerShipID>
+    <LandID>1155</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <LandVillageLGDCode>218556</LandVillageLGDCode>
+    <LandVillageName>Gobind Bara</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>21/04/2010</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.04</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR267525634</Farmer_Registration_No>
+    <Farmer_FName>VIMAL DEVI</Farmer_FName>
+    <Father_Name>KAUSHAL KISHOR SINH</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>101</LandOwnerShipID>
+    <LandID>550</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <LandVillageLGDCode>218556</LandVillageLGDCode>
+    <LandVillageName>Gobind Bara</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>21/04/2010</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.09</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR267182181</Farmer_Registration_No>
+    <Farmer_FName>MAGAR</Farmer_FName>
+    <Father_Name>MAHAMMUD</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>150</LandOwnerShipID>
+    <LandID>1742</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <LandVillageLGDCode>218557</LandVillageLGDCode>
+    <LandVillageName>Anjor Bara</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>26/02/2016</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.08</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR267182181</Farmer_Registration_No>
+    <Farmer_FName>MAGAR</Farmer_FName>
+    <Father_Name>MAHAMMUD</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>83</LandOwnerShipID>
+    <LandID>1743</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <LandVillageLGDCode>218557</LandVillageLGDCode>
+    <LandVillageName>Anjor Bara</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>26/02/2016</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.04</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR267182181</Farmer_Registration_No>
+    <Farmer_FName>MAGAR</Farmer_FName>
+    <Father_Name>MAHAMMUD</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>83</LandOwnerShipID>
+    <LandID>1748</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>213</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1988</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1988</LandBlockLGDCode>
+    <LandVillageLGDCode>218557</LandVillageLGDCode>
+    <LandVillageName>Anjor Bara</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>26/02/2016</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.04</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR268062046</Farmer_Registration_No>
+    <Farmer_FName>RAISH MIYAN</Farmer_FName>
+    <Father_Name>KHENARI MIYAN</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>7</LandOwnerShipID>
+    <LandID>66</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>211</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1936</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1936</LandBlockLGDCode>
+    <LandVillageLGDCode>216789</LandVillageLGDCode>
+    <LandVillageName>Baswaria</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>02/02/2018</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.05</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+  <FarmerLandDetails>
+    <Farmer_Registration_No>BR146524823</Farmer_Registration_No>
+    <Farmer_FName>MANJU DEVI</Farmer_FName>
+    <Father_Name>BAIJNATH YADAV</Father_Name>
+    <LandLocation />
+    <LandOwnerShipID>134</LandOwnerShipID>
+    <LandID>134</LandID>
+    <LandStateLGDCode>10</LandStateLGDCode>
+    <LandDistrictLGDCode>195</LandDistrictLGDCode>
+    <LandSubDistrictLGDCode>1716</LandSubDistrictLGDCode>
+    <LandBlockLGDCode>1716</LandBlockLGDCode>
+    <LandVillageLGDCode>227665</LandVillageLGDCode>
+    <LandVillageName>Mataunia</LandVillageName>
+    <TypeOfMutation>1</TypeOfMutation>
+    <DateOfMutation>16/03/1984</DateOfMutation>
+    <LandAreaMeasurementUnit>Hect</LandAreaMeasurementUnit>
+    <LandArea>0.61</LandArea>
+    <LandTransferDoneBefore01022019>1</LandTransferDoneBefore01022019>
+    <LandOwnershipType>1</LandOwnershipType>
+  </FarmerLandDetails>
+</DocumentElement>
